@@ -1,121 +1,121 @@
-# An Introduction to JavaScript
+# Një hyrje në JavaScript
 
-Let's see what's so special about JavaScript, what we can achieve with it, and which other technologies play well with it.
+Le të shohim se çfarë është kaq e veçantë për JavaScript, çfarë mund të arrijmë me të, dhe cilat teknologji të tjera luajnë mirë me të.
 
-## What is JavaScript?
+## Çfarë është JavaScript?
 
-*JavaScript* was initially created to "make web pages alive".
+*JavaScript* u krijua fillimisht për t'i "bërë ueb faqet të gjalla".
 
-The programs in this language are called *scripts*. They can be written right in a web page's HTML and run automatically as the page loads.
+Programet në këtë gjuhë janë quajtur *skripta*. Ato mund të shkruhen drejtpërdrejt në HTML të një ueb faqe dhe të ekzekutohen automatikisht kur faqja ngarkohet.
 
-Scripts are provided and executed as plain text. They don't need special preparation or compilation to run.
+Skriptet sigurohen dhe ekzekutohen si tekst i thjeshtë. Ata nuk kanë nevojë për përgatitje ose përpilim të veçantë për t'u ekzekutuar.
 
-In this aspect, JavaScript is very different from another language called [Java](https://en.wikipedia.org/wiki/Java_(programming_language)).
+Në këtë aspekt, JavaScript është shumë e ndryshme nga një gjuhë tjetër të quajtur [Java](https://en.wikipedia.org/wiki/Java_(programming_language)).
 
-```smart header="Why is it called <u>Java</u>Script?"
-When JavaScript was created, it initially had another name: "LiveScript". But Java was very popular at that time, so it was decided that positioning a new language as a "younger brother" of Java would help.
+```smart header="Pse quhet <u>Java</u>Script?"
+Kur u krijua JavaScript, ajo fillimisht kishte një emër tjetër: "LiveScript". Por Java ishte shumë e njohur në atë kohë, kështu që u vendos që pozicionimi i një gjuhe të re si një "vëlla më i ri" i Java do të ndihmonte.
 
-But as it evolved, JavaScript became a fully independent language with its own specification called [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript), and now it has no relation to Java at all.
+Por ndërsa evoluoi, JavaScript u bë një gjuhë plotësisht e pavarur me specifikimet e veta të quajtura [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript), dhe tani nuk ka asnjë lidhje me Java.
 ```
 
-Today, JavaScript can execute not only in the browser, but also on the server, or actually on any device that has a special program called [the JavaScript engine](https://en.wikipedia.org/wiki/JavaScript_engine).
+Sot, JavaScript mund të ekzekutojë jo vetëm në shfletuesin, por edhe në server, ose në të vërtetë në çdo pajisje që ka një program të veçantë të quajtur [the JavaScript engine](https://en.wikipedia.org/wiki/JavaScript_engine).
 
-The browser has an embedded engine sometimes called a "JavaScript virtual machine".
+Shfletuesi ka një motor të ngulitur që nganjëherë quhet "JavaScript virtual machine".
 
-Different engines have different "codenames". For example:
+Motorë të ndryshëm kanë "emra të koduar" të ndryshëm. Për shembull:
 
-- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- in Chrome and Opera.
-- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- in Firefox.
-- ...There are other codenames like "Chakra" for IE, "ChakraCore" for Microsoft Edge, "Nitro" and "SquirrelFish" for Safari, etc.
+- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- në Chrome dhe Opera.
+- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- në Firefox.
+- ...Ekzistojnë emra të tjerë të koduar si "Chakra" për IE, "ChakraCore" për Microsoft Edge, "Nitro" dhe "SquirrelFish" për Safari, etj.
 
-The terms above are good to remember because they are used in developer articles on the internet. We'll use them too. For instance, if "a feature X is supported by V8", then it probably works in Chrome and Opera.
+Termat e mësipërm janë të mira për tu mbajtur mend sepse ato përdoren në artikuj të zhvilluesve në internet. Ne gjithashtu do t'i përdorim ato. Për shembull, nëse "një tipar X mbështetet nga V8", atëherë ai ndoshta funksionon në Chrome dhe Opera.
 
-```smart header="How do engines work?"
+```smart header="Si funksionojnë motorët?"
 
-Engines are complicated. But the basics are easy.
+Motorët janë të komplikuar. Por bazat janë të lehta.
 
-1. The engine (embedded if it's a browser) reads ("parses") the script.
-2. Then it converts ("compiles") the script to the machine language.
-3. And then the machine code runs, pretty fast.
+1. Motori (i ngulitur nëse është shfletues) lexon ("analizon") skenarin.
+2. Pastaj shndërron ("përpilon") shkrimin në gjuhën e makinës.
+3. Dhe pastaj kodi i makinës funksionon, shumë shpejt.
 
-The engine applies optimizations at each step of the process. It even watches the compiled script as it runs, analyzes the data that flows through it, and further optimizes the machine code based on that knowledge.
+Motori aplikon optimizime në secilin hap të procesit. Ai madje shikon skenarin e përpiluar ndërsa ekzekutohet, analizon të dhënat që rrjedhin përmes tij dhe optimizon më tej kodin e makinës bazuar në ato njohuri.
 ```
 
-## What can in-browser JavaScript do?
+## Çfarë mund të bëjë in-browser JavaScript?
 
-Modern JavaScript is a "safe" programming language. It does not provide low-level access to memory or CPU, because it was initially created for browsers which do not require it.
+JavaScriptja moderne është një gjuhë programimi "e sigurt". Ajo nuk ofron qasje të nivelit të ulët të kujtesës ose CPU, sepse ajo u krijua fillimisht për shfletuesit të cilat nuk kërkojnë atë.
 
-JavaScript's capabilities greatly depend on the environment it's running in. For instance, [Node.js](https://wikipedia.org/wiki/Node.js) supports functions that allow JavaScript to read/write arbitrary files, perform network requests, etc.
+Aftësitë e JavaScript varen shumë nga mjedisi ku po ekzekutohet. Për shembull, [Node.js](https://wikipedia.org/wiki/Node.js) mbështet funksione që lejojnë JavaScript të lexojë / shkruajë skedarë arbitrar, të kryejë kërkesa në rrjet, etj.
 
-In-browser JavaScript can do everything related to webpage manipulation, interaction with the user, and the webserver.
+In-browser JavaScript mund të bëjë gjithçka që lidhet me manipulimin e ueb faqes, ndërveprimin me përdoruesin dhe ueb serverin.
 
-For instance, in-browser JavaScript is able to:
+Për shembull, in-browser JavaScript është në gjendje të:
 
-- Add new HTML to the page, change the existing content, modify styles.
-- React to user actions, run on mouse clicks, pointer movements, key presses.
-- Send requests over the network to remote servers, download and upload files (so-called [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)) and [COMET](https://en.wikipedia.org/wiki/Comet_(programming)) technologies).
-- Get and set cookies, ask questions to the visitor, show messages.
-- Remember the data on the client-side ("local storage").
+- Të shton HTML të ri në faqe, ndryshoni përmbajtjen ekzistuese, modifikoni stilet.
+- Të reagojë ndaj veprimeve të përdoruesit, të ekzekutohet në klikime të miut, lëvizje të treguesit, shtypje çelësash.
+- Të dërgon kërkesa përmes rrjetit në serverë të largët, shkarkoni dhe ngarkoni skedarë (të ashtuquajturën [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)) dhe [COMET](https://en.wikipedia.org/wiki/Comet_(programming)) teknologjive).
+- Për të marrë dhe vendosur cookies, bëj pyetje vizitorit, shfaq mesazhe.
+- Për të kujtuar të dhënat në anën e klientit ("local storage").
 
-## What CAN'T in-browser JavaScript do?
+## Çfarë nuk mund të bëjë in-browser JavaScript?
 
-JavaScript's abilities in the browser are limited for the sake of the user's safety. The aim is to prevent an evil webpage from accessing private information or harming the user's data.
+Aftësitë e JavaScriptit në shfletues janë të kufizuara për hir të sigurisë së përdoruesit. Qëllimi është të parandalojë një faqe të keqe në internet që të ketë informacion privat ose të dëmtojë të dhënat e përdoruesit.
 
-Examples of such restrictions include:
+Shembuj të kufizimeve të tilla përfshijnë:
 
-- JavaScript on a webpage may not read/write arbitrary files on the hard disk, copy them or execute programs. It has no direct access to OS functions.
+- JavaScript në një faqe në internet mund të mos lexojë / shkruajë skedarë arbitrarë në hard disk, t'i kopjojë ato ose të ekzekutojë programe. Nuk ka qasje të drejtpërdrejtë në funksionet e sistemit operativ.
 
-    Modern browsers allow it to work with files, but the access is limited and only provided if the user does certain actions, like "dropping" a file into a browser window or selecting it via an `<input>` tag.
+    Shfletuesit modernë e lejojnë atë të punojë me skedarë, por hyrja është e kufizuar dhe sigurohet vetëm nëse përdoruesi bën veprime të caktuara, si "hedhja" e një skedari në një dritare të shfletuesit ose zgjedhja e tij përmes një etikete "<input>".
 
-    There are ways to interact with camera/microphone and other devices, but they require a user's explicit permission. So a JavaScript-enabled page may not sneakily enable a web-camera, observe the surroundings and send the information to the [NSA](https://en.wikipedia.org/wiki/National_Security_Agency).
-- Different tabs/windows generally do not know about each other. Sometimes they do, for example when one window uses JavaScript to open the other one. But even in this case, JavaScript from one page may not access the other if they come from different sites (from a different domain, protocol or port).
+    Ka mënyra për të bashkëvepruar me kamerën / mikrofonin dhe pajisjet e tjera, por ato kërkojnë leje të qartë të përdoruesit. Kështu që një faqe e aktivizuar në JavaScript mund të mos mundësojë fshehurazi një kamerë në internet, të vëzhgojë rrethinën dhe të dërgojë informacionin te [NSA](https://en.wikipedia.org/wiki/National_Security_Agency).
+- Skeda / dritare të ndryshme zakonisht nuk dinë për njëri-tjetrin. Ndonjëherë ato e bëjnë, për shembull kur një dritare përdor JavaScript për të hapur tjetrën. Por edhe në këtë rast, JavaScript nga një faqe mund të mos ketë qasje në tjetrën nëse ato vijnë nga faqe të ndryshme (nga një domen, protokoll ose port i ndryshëm).
 
-    This is called the "Same Origin Policy". To work around that, *both pages* must agree for data exchange and contain a special JavaScript code that handles it. We'll cover that in the tutorial.
+    Kjo quhet "Politika e Origjinës së Njëjtë". Për të punuar rreth kësaj, * të dy faqet * duhet të bien dakord për shkëmbimin e të dhënave dhe të përmbajnë një kod të veçantë JavaScript që e trajton atë. Ne do ta trajtojmë atë në tutorial.
 
-    This limitation is, again, for the user's safety. A page from `http://anysite.com` which a user has opened must not be able to access another browser tab with the URL `http://gmail.com` and steal information from there.
-- JavaScript can easily communicate over the net to the server where the current page came from. But its ability to receive data from other sites/domains is crippled. Though possible, it requires explicit agreement (expressed in HTTP headers) from the remote side. Once again, that's a safety limitation.
+    Ky kufizim është, përsëri, për sigurinë e përdoruesit. Një faqe nga `http://anysite.com` që një përdorues ka hapur nuk duhet të jetë në gjendje të përdorë një skedar tjetër të shfletuesit me URL-në` http://gmail.com` dhe të vjedhë informacionin prej andej.
+- JavaScript mund të komunikojë lehtësisht përmes rrjetit me serverin nga ka ardhur faqja aktuale. Por aftësia e tij për të marrë të dhëna nga faqet / fushat e tjera është e gjymtuar. Megjithëse është e mundur, ajo kërkon marrëveshje të qartë (shprehur në headers HTTP) nga ana e largët. Edhe një herë, ky është një kufizim i sigurisë.
 
 ![](limitations.svg)
 
-Such limits do not exist if JavaScript is used outside of the browser, for example on a server. Modern browsers also allow plugin/extensions which may ask for extended permissions.
+Kufij të tillë nuk ekzistojnë nëse JavaScript përdoret jashtë shfletuesit, për shembull në një server. Shfletuesit modernë lejojnë gjithashtu shtojca / shtesa të cilat mund të kërkojnë leje të zgjatura.
 
-## What makes JavaScript unique?
+## Çfarë e bën JavaScript unike?
 
-There are at least *three* great things about JavaScript:
+Ka të paktën * tre * gjëra të mrekullueshme në lidhje me JavaScript:
 
 ```compare
-+ Full integration with HTML/CSS.
-+ Simple things are done simply.
-+ Support by all major browsers and enabled by default.
++ Integrimi i plotë me HTML / CSS.
++ Gjërat e thjeshta bëhen thjesht.
++ Mbështetje nga të gjithë shfletuesit kryesorë dhe mundësohet nga default.
 ```
-JavaScript is the only browser technology that combines these three things.
+JavaScript është e vetmja teknologji e shfletuesit që kombinon këto tre gjëra.
 
-That's what makes JavaScript unique. That's why it's the most widespread tool for creating browser interfaces.
+Kjo është ajo që e bën JavaScript unike. Kjo është arsyeja pse është mjeti më i përhapur për krijimin e ndërfaqeve të shfletuesit.
 
-That said, JavaScript also allows to create servers, mobile applications, etc.
+Thënë kjo, JavaScript lejon gjithashtu krijimin e serverave, aplikacioneve mobile, etj.
 
-## Languages "over" JavaScript
+## Gjuhët "mbi" JavaScript
 
-The syntax of JavaScript does not suit everyone's needs. Different people want different features.
+Sintaksa e JavaScript nuk i përshtatet nevojave të të gjithëve. Njerëz të ndryshëm duan tipare të ndryshme.
 
-That's to be expected, because projects and requirements are different for everyone.
+Kjo pritet, sepse projektet dhe kërkesat janë të ndryshme për të gjithë.
 
-So recently a plethora of new languages appeared, which are *transpiled* (converted) to JavaScript before they run in the browser.
+Kohët e fundit u shfaq një bollëk gjuhësh të reja, të cilat * transpilohen * (konvertohen) në JavaScript para se të ekzekutohen në shfletues.
 
-Modern tools make the transpilation very fast and transparent, actually allowing developers to code in another language and auto-converting it "under the hood".
+Mjetet moderne e bëjnë transpilimin shumë të shpejtë dhe transparent, duke lejuar në fakt zhvilluesit të kodojnë në një gjuhë tjetër dhe ta konvertojnë automatikisht atë "nën kapuç".
 
-Examples of such languages:
+Shembuj të gjuhëve të tilla:
 
-- [CoffeeScript](http://coffeescript.org/) is a "syntactic sugar" for JavaScript. It introduces shorter syntax, allowing us to write clearer and more precise code. Usually, Ruby devs like it.
-- [TypeScript](http://www.typescriptlang.org/) is concentrated on adding "strict data typing" to simplify the development and support of complex systems. It is developed by Microsoft.
-- [Flow](http://flow.org/) also adds data typing, but in a different way. Developed by Facebook.
-- [Dart](https://www.dartlang.org/) is a standalone language that has its own engine that runs in non-browser environments (like mobile apps), but also can be transpiled to JavaScript. Developed by Google.
-- [Brython](https://brython.info/) is a Python transpiler to JavaScript that allow to write application in pure Python without JavaScript.
+- [CoffeeScript](http://coffeescript.org/) është një "sheqer sintaksor" për JavaScript. Ajo paraqet sintaksë më të shkurtër, duke na lejuar të shkruajmë kod më të qartë dhe më të saktë. Zakonisht, Ruby devs e pëlqejnë.
+- [TypeScript](http://www.typescriptlang.org/) është përqendruar në shtimin e "shtypjes së saktë të të dhënave" për të thjeshtuar zhvillimin dhe mbështetjen e sistemeve komplekse. Është zhvilluar nga Microsoft.
+- [Flow](http://flow.org/) gjithashtu shton shtypjen e të dhënave, por në një mënyrë tjetër. Zhvilluar nga Facebook.
+- [Dart](https://www.dartlang.org/) është një gjuhë e pavarur që ka motorin e vet që funksionon në mjedise pa shfletues (si aplikacionet për celularë), por gjithashtu mund të transmetohet në JavaScript. Zhvilluar nga Google.
+- [Brython](https://brython.info/) është një transportues Python në JavaScript që lejon të shkruash aplikacion në Python të pastër pa JavaScript.
 
-There are more. Of course, even if we use one of transpiled languages, we should also know JavaScript to really understand what we're doing.
+Ka më shumë. Sigurisht, edhe nëse përdorim një nga gjuhët e transpiluara, duhet të dimë gjithashtu JavaScript për të kuptuar me të vërtetë se çfarë po bëjmë.
 
-## Summary
+## Përmbledhje
 
-- JavaScript was initially created as a browser-only language, but is now used in many other environments as well.
-- Today, JavaScript has a unique position as the most widely-adopted browser language with full integration with HTML/CSS.
-- There are many languages that get "transpiled" to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
+- JavaScript u krijua fillimisht si gjuhë vetëm për shfletuesin, por tani përdoret gjithashtu në shumë mjedise të tjera.
+- Sot, JavaScript ka një pozicion unik si gjuha e shfletuesit më e pranuar gjerësisht me integrimin e plotë me HTML / CSS.
+- Ka shumë gjuhë që "transpilohen" në JavaScript dhe ofrojnë veçori të caktuara. Rekomandohet të hidhni një vështrim në to, të paktën shkurtimisht, pasi të zotëroni JavaScript.
