@@ -13,7 +13,7 @@ Por duke qenë se është formalizuar, është e vështirë për tu kuptuar në 
 
 Për të lexuar rreth veçorive të reja të fundit, duke përfshirë ato që janë "gati standarte" (të ashtuquajtura "stage 3"), shikoni propozimet tek <https://github.com/tc39/proposals>.
 
-Gjithashtu, nëse po zhvilloni për shfletuesin, atëherë ka specifikime të tjera që trajtohen në [pjesen e dyte](info:browser-environment) te udhëzuesit.
+Gjithashtu, nëse po zhvilloni për shfletuesin, atëherë ka specifikime të tjera që trajtohen në [pjesen e dyte](info:browser-environment) të udhëzuesit.
 
 ## Manuali
 
@@ -24,7 +24,7 @@ Gjithashtu, nëse po zhvilloni për shfletuesin, atëherë ka specifikime të tj
     Megjithatë, shpesh është më e mirë të përdorni një kërkim në internet në vend të kësaj. Thjesht perdorni "MDN [termi]" në kërkesë, shembull. <https://google.com/search?q=MDN+parseInt> per te kerkuar funksionin `parseInt`.
 
 
-- **MSDN** – Manuali i Microsoft me shumë informacion, përfshirë JavaScript (shpesh e quajtur JScript). Nëse dikush ka nevojë për diçka specifike për Internet Explorer, është më mirë të shkojë aty: <http://msdn.microsoft.com/>.
+- **MSDN** – Manuali i Microsoft më shumë informacion, përfshirë JavaScript (shpesh e quajtur JScript). Nëse dikush ka nevojë për diçka specifike për Internet Explorer, është më mirë të shkojë aty: <http://msdn.microsoft.com/>.
 
     Gjithashtu, mund të përdorim një kërkim në internet me fraza të tilla si "RegExp MSDN" ose "RegExp MSDN jscript".
 
