@@ -1,17 +1,17 @@
-# Hello, world!
+# Pershendetje bote!
 
-This part of the tutorial is about core JavaScript, the language itself.
+Kjo pjesë e mesimit është për bazat JavaScript-it , vetë gjuhën e programimit.
 
-But we need a working environment to run our scripts and, since this book is online, the browser is a good choice. We'll keep the amount of browser-specific commands (like `alert`) to a minimum so that you don't spend time on them if you plan to concentrate on another environment (like Node.js). We'll focus on JavaScript in the browser in the [next part](/ui) of the tutorial.
+Por ne kemi nevojë për një mjedis të funksionueshëm për të ekzekutuar skriptat tona dhe, pasi ky libër është në internet, shfletuesi është një zgjedhje e mirë. Ne do të perdorim komandat (sic eshte `alert`) në minimum, kështu që të mos humbasim kohë në to nëse planifikoni të përqendroheni në një mjedis tjetër (si Node.js). Ne do të fokusohemi te JavaScript-i në shfletues në [pjesen tjeter](/ui) të mesimit.
 
-So first, let's see how we attach a script to a webpage. For server-side environments (like Node.js), you can execute the script with a command like `"node my.js"`.
+Kështu që së pari, le të shohim si bashkojmë një skript në një faqe interneti. Për mjediset server-side (si Node.js), mund të ekzekutoni skriptën me një komandë si `"node my.js"`.
 
 
-## The "script" tag
+## Etiketa "script"
 
-JavaScript programs can be inserted into any part of an HTML document with the help of the `<script>` tag.
+Programet JavaScript mund të vendosen në çdo pjesë të një dokumenti HTML me ndihmën e etiketës `<script>`.
 
-For instance:
+Për shembull:
 
 ```html run height=100
 <!DOCTYPE HTML>
@@ -19,15 +19,15 @@ For instance:
 
 <body>
 
-  <p>Before the script...</p>
+  <p>Perpara script...</p>
 
 *!*
   <script>
-    alert( 'Hello, world!' );
+    alert( 'Pershendetje bote!!' );
   </script>
 */!*
 
-  <p>...After the script.</p>
+  <p>...Pas script.</p>
 
 </body>
 
@@ -35,24 +35,25 @@ For instance:
 ```
 
 ```online
-You can run the example by clicking the "Play" button in the right-top corner of the box above.
+Mund të ekzekutoni shembullin duke klikuar në butonin "Luaj" në cepin e djathtë të sipërfaqes më lart.
 ```
 
-The `<script>` tag contains JavaScript code which is automatically executed when the browser processes the tag.
+Etiketa `<script>` përmban kod JavaScript i cili ekzekutohet automatikisht kur shfletuesi proceson etiketën.
 
 
-## Modern markup
+## Markup modern
 
-The `<script>` tag has a few attributes that are rarely used nowadays but can still be found in old code:
+Etiketa `<script>` ka disa atribute që rrallë përdoren sot, por mund të gjenden ende në kodin e vjetër:
 
-The `type` attribute: <code>&lt;script <u>type</u>=...&gt;</code>
-: The old HTML standard, HTML4, required a script to have a `type`. Usually it was `type="text/javascript"`. It's not required anymore. Also, the modern HTML standard totally changed the meaning of this attribute. Now, it can be used for JavaScript modules. But that's an advanced topic, we'll talk about modules in another part of the tutorial.
+Atributi i `type`: <code>&lt;script <u>type</u>=...&gt;</code>
 
-The `language` attribute: <code>&lt;script <u>language</u>=...&gt;</code>
-: This attribute was meant to show the language of the script. This attribute no longer makes sense because JavaScript is the default language. There is no need to use it.
+Standardi i vjetër i HTML, HTML4, kërkonte që një skript të kishte atributin `type`. Zakonisht, ishte `type="text/javascript"`. Kjo nuk kërkohet më në HTML. Atributi `type` ka ndryshuar plotësisht kuptimin e tij. Tani, ai mund të përdoret për modulet e JavaScript. Por ky është një temë e avancuar, dhe do të flasim më gjerësisht për modulet në një pjesë tjetër të mësimit.
 
-Comments before and after scripts.
-: In really ancient books and guides, you may find comments inside `<script>` tags, like this:
+Atributi i `language`: <code>&lt;script <u>language</u>=...&gt;</code>
+: Ky atribut kishte për qëllim të tregonte gjuhën e skriptit. Megjithatë, ky atribut nuk ka më kuptim pasi JavaScript është gjuha kryesore. Nuk ka nevojë ta përdorni këtë atribut.
+
+Komentet para dhe pas skripteve.
+Në librat dhe udhëzime shumë të vjetra, mund të gjenden komente brenda etiketave `<script>`, si në këtë mënyrë:
 
     ```html no-beautify
     <script type="text/javascript"><!--
@@ -60,28 +61,29 @@ Comments before and after scripts.
     //--></script>
     ```
 
-    This trick isn't used in modern JavaScript. These comments hide JavaScript code from old browsers that didn't know how to process the `<script>` tag. Since browsers released in the last 15 years don't have this issue, this kind of comment can help you identify really old code.
+    Ky truk nuk përdoret në JavaScriptin modern. Këto komente fshehin kodin JavaScript nga shfletuesit e vjetër që nuk dinin si të procesonin etiketën <script>. Pasi që shfletuesit në 15 vitet e fundit nuk kanë këtë problem, ky lloj komenti mund t'ju ndihmojë të identifikoni kodin shumë të vjetër.
 
 
-## External scripts
+## Skriptet e jashtëm
 
-If we have a lot of JavaScript code, we can put it into a separate file.
+Nëse kemi shumë kod JavaScript, mund ta vendosim atë në një skedar të veçantë.
 
-Script files are attached to HTML with the `src` attribute:
+Skedarët e skripteve bashkohen me HTML-në duke përdorur atributin `src`:
 
 ```html
 <script src="/path/to/script.js"></script>
 ```
 
-Here, `/path/to/script.js` is an absolute path to the script from the site root. One can also provide a relative path from the current page. For instance, `src="script.js"` would mean a file `"script.js"` in the current folder.
+Këtu, `/path/to/script.js` është një path absolute për skedarin nga rrënja e faqes. Mund të jepni gjithashtu një path relative nga faqja aktuale. Për shembull, `src="script.js"` do të thotë një skedar "script.js" në dosjen aktuale.
 
-We can give a full URL as well. For instance:
+
+Ne gjithashtu mund të jepim një URL të plotë. Për shembull:
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
 ```
 
-To attach several scripts, use multiple tags:
+Për të bashkangjitur disa skripte, përdorni shumë etiketa:
 
 ```html
 <script src="/js/script1.js"></script>
@@ -90,29 +92,29 @@ To attach several scripts, use multiple tags:
 ```
 
 ```smart
-As a rule, only the simplest scripts are put into HTML. More complex ones reside in separate files.
+Si rregull, vetëm skriptet më të thjeshta vendosen në HTML. Skriptet më komplekse që kërkojnë më shumë kod zakonisht vendosen në skedarë të veçantë.
 
-The benefit of a separate file is that the browser will download it and store it in its [cache](https://en.wikipedia.org/wiki/Web_cache).
+Përfitimi i një skedari të veçantë është se shfletuesi do ta shkarkojë atë dhe do ta ruajë në [cache](https://en.wikipedia.org/wiki/Web_cache).
 
-Other pages that reference the same script will take it from the cache instead of downloading it, so the file is actually downloaded only once.
+Faqet e tjera që referencojnë të njëjtin skript do ta marrin atë nga cache në vend që ta shkarkojnë, kështu që skedari shkarkohet në fakt vetëm një herë.
 
-That reduces traffic and makes pages faster.
+Kjo redukton trafikun dhe bën faqet më të shpejta.
 ```
 
-````warn header="If `src` is set, the script content is ignored."
-A single `<script>` tag can't have both the `src` attribute and code inside.
+````warn header="Nese `src` eshte vendosur, permbajtja e skriptit injorohet."
+Një etiketë e vetme `<script>` nuk mund të ketë njëkohësisht atributin `src` dhe kod brenda.
 
-This won't work:
+Kjo nuk do të funksionojë:
 
 ```html
 <script *!*src*/!*="file.js">
-  alert(1); // the content is ignored, because src is set
+  alert(1); // permbajtja do te injorohet, pasi src eshte vendosur
 </script>
 ```
 
-We must choose either an external `<script src="…">` or a regular `<script>` with code.
+Duhet të zgjedhim ose një skedar të jashtëm `<script src="…">`, ose një skript normal `<script>` me kod.
 
-The example above can be split into two scripts to work:
+Shembulli i mësipërm mund të ndahet në dy skripte për të funksionuar:
 
 ```html
 <script src="file.js"></script>
@@ -122,11 +124,11 @@ The example above can be split into two scripts to work:
 ```
 ````
 
-## Summary
+## Përmbledhje
 
-- We can use a `<script>` tag to add JavaScript code to a page.
-- The `type` and `language` attributes are not required.
+- Mund të përdorim etiketën `<script>` për të shtuar kod JavaScript në një faqe.
+- Atributet `type` dhe `language` nuk janë të nevojshme.
 - A script in an external file can be inserted with `<script src="path/to/script.js"></script>`.
+- Një skript në një skedar të jashtëm mund të vendoset me anë të `<script src="path/to/script.js"></script>`.
 
-
-There is much more to learn about browser scripts and their interaction with the webpage. But let's keep in mind that this part of the tutorial is devoted to the JavaScript language, so we shouldn't distract ourselves with browser-specific implementations of it. We'll be using the browser as a way to run JavaScript, which is very convenient for online reading, but only one of many.
+Ka shumë më tepër për të mësuar në lidhje me skriptet e shfletuesit dhe ndërveprimin e tyre me faqen e internetit. Por le të mbajmë parasysh se kjo pjesë e udhëzuesit është e dedikuar gjuhës së programimit JavaScript, kështu që nuk duhet të shpërqendrohemi me implementimet specifike të shfletuesit. Ne do të përdorim shfletuesin si një mënyrë për të ekzekutuar JavaScript, e cila është shumë e përshtatshme për leximin në internet, por vetëm njërin nga shumë shfletues.
