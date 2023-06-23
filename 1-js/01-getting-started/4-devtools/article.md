@@ -1,63 +1,63 @@
-# Developer console
+# Console e zhvilluesit
 
-Code is prone to errors. You will quite likely make errors... Oh, what am I talking about? You are *absolutely* going to make errors, at least if you're a human, not a [robot](https://en.wikipedia.org/wiki/Bender_(Futurama)).
+Kodi është i prirur të ketë gabime. Ka shumë gjasa që ju të bëni gabime... Oh, çfare po flas unë? Ju absolutisht do të bëni gabime, të paktën nëse jeni një njeri, jo një [robot](https://en.wikipedia.org/wiki/Bender_(Futurama)).
 
-But in the browser, users don't see errors by default. So, if something goes wrong in the script, we won't see what's broken and can't fix it.
+Por në shfletues, përdoruesit nuk shohin gabimet në mënyrë të paracaktuar. Prandaj, nëse diçka shkon keq në skript, nuk do të shohim se çfarë po shkon keq dhe nuk mund ta rregullojmë atë.
 
-To see errors and get a lot of other useful information about scripts, "developer tools" have been embedded in browsers.
+Për të parë gabimet dhe për të marrë shumë informacione të tjera të dobishme rreth skripteve, "mjetet e zhvilluesit" janë të integruara në shfletues.
 
-Most developers lean towards Chrome or Firefox for development because those browsers have the best developer tools. Other browsers also provide developer tools, sometimes with special features, but are usually playing "catch-up" to Chrome or Firefox. So most developers have a "favorite" browser and switch to others if a problem is browser-specific.
+Shumica e zhvilluesve preferojnë Chrome ose Firefox për zhvillim, sepse ato shfletues kanë mjetet e zhvilluesit më të mira. Shfletuesit e tjerë gjithashtu ofrojnë mjetet e zhvilluesit, ndonjëherë me karakteristika speciale, por zakonisht po përpiqen të ndjekin Chrome ose Firefox. Prandaj shumica e zhvilluesve kanë një shfletues "të preferuar" dhe bëjnë ndërrimin në të tjerët nëse një problem është i veçantë për shfletuesin.
 
-Developer tools are potent; they have many features. To start, we'll learn how to open them, look at errors, and run JavaScript commands.
+Mjetet e zhvilluesit janë të fuqishme; ato kanë shumë karakteristika. Fillimisht, do të mësojmë si t'i hapim ato, të shohim gabimet dhe të ekzekutojmë komanda JavaScript.
 
 ## Google Chrome
 
-Open the page [bug.html](bug.html).
+Hapim faqen [bug.html](bug.html).
 
-There's an error in the JavaScript code on it. It's hidden from a regular visitor's eyes, so let's open developer tools to see it.
+Ka një gabim në kodin JavaScript në të. Ai është i fshehur nga sytë e një vizitori të rregullt, kështu që le të hapim mjetet e zhvilluesit për ta parë atë.
 
-Press `key:F12` or, if you're on Mac, then `key:Cmd+Opt+J`.
+Shtypim `key:F12` ose, nese perdorni Mac, atëhere `key:Cmd+Opt+J`.
 
-The developer tools will open on the Console tab by default.
+Mjetet e zhvilluesit do të hapen në skedën "Console" si parazgjedhje.
 
-It looks somewhat like this:
+Do te duket dicka e tillë:
 
 ![chrome](chrome.png)
 
-The exact look of developer tools depends on your version of Chrome. It changes from time to time but should be similar.
+Pamja e saktë e mjetit te zhvilluesit varet nga versioni juaj i Chrome. Ajo ndryshon nga koha në kohë, por duhet të jetë e ngjashme.
 
-- Here we can see the red-colored error message. In this case, the script contains an unknown "lalala" command.
-- On the right, there is a clickable link to the source `bug.html:12` with the line number where the error has occurred.
+- Këtu mund të shohim mesazhin e gabimit me ngjyrë të kuqe. Në këtë rast, skripti përmban një komandë të panjohur "lalala".
+- Në të djathtë, ka një lidhje që mund të klikohet për burimin `bug.html:12` me numrin e linjës ku ka ndodhur gabimi.
 
-Below the error message, there is a blue `>` symbol. It marks a "command line" where we can type JavaScript commands. Press `key:Enter` to run them.
+Poshtë mesazhit të gabimit, ka një simbol blu >. Ai nenkupton një "linjë komande" ku mund të shkruajmë komandat JavaScript. Shtypni `key:Enter` për t'i ekzekutuar ato.
 
-Now we can see errors, and that's enough for a start. We'll come back to developer tools later and cover debugging more in-depth in the chapter <info:debugging-chrome>.
+Tani mund të shohim gabimet, dhe kjo mjafton per fillim. Do të kthehemi në mjetet e zhvilluesit më vonë dhe do të trajtojmë më thellë debuggimin në kapitullin <info:debugging-chrome>.
 
 ```smart header="Multi-line input"
-Usually, when we put a line of code into the console, and then press `key:Enter`, it executes.
+Zakonisht, kur vendosim një rresht kod në konsolë dhe pastaj shtypim `key:Enter`, ai ekzekutohet.
 
-To insert multiple lines, press `key:Shift+Enter`. This way one can enter long fragments of JavaScript code.
+Për të vendosur më shumë rreshta, shtypni `key:Shift+Enter`. Kështu mund të vendosni fragmente të gjata të kodit JavaScript.
 ```
 
-## Firefox, Edge, and others
+## Firefox, Edge, dhe te tjere.
 
-Most other browsers use `key:F12` to open developer tools.
+Shumica e shfletuesve të tjerë përdorin `key:F12` për të hapur mjetet e zhvilluesit.
 
-The look & feel of them is quite similar. Once you know how to use one of these tools (you can start with Chrome), you can easily switch to another.
+Pamjet e tyre janë shumë të ngjashme. Nëse dini si të përdorni njërin nga këto mjetet (mund të filloni me Chrome), mund të kaloni lehtësisht në një tjetër.
 
 ## Safari
 
-Safari (Mac browser, not supported by Windows/Linux) is a little bit special here. We need to enable the "Develop menu" first.
+Safari (shfletuesi i Mac, i cili nuk mbështetet në Windows/Linux) është paksa i veçantë këtu. Ne duhet të aktivizojmë "Menunë e Zhvilluesit" së pari.
 
-Open Preferences and go to the "Advanced" pane. There's a checkbox at the bottom:
+Hapni Preferencat dhe shkoni te paneli "Advanced". Në fund të tij ka një kutizë zgjedhjeje:
 
 ![safari](safari.png)
 
-Now `key:Cmd+Opt+C` can toggle the console. Also, note that the new top menu item named "Develop" has appeared. It has many commands and options.
+Tani `key:Cmd+Opt+C` mund të ndërrojë konsolën. Gjithashtu, vini re se ka shfaqur një element menu i ri në krye me emrin "Develop". Ai ka shumë komanda dhe opsione.
 
-## Summary
+## Përmbledhje
 
-- Developer tools allow us to see errors, run commands, examine variables, and much more.
-- They can be opened with `key:F12` for most browsers on Windows. Chrome for Mac needs `key:Cmd+Opt+J`, Safari: `key:Cmd+Opt+C` (need to enable first).
+- Mjetet e zhvilluesit na lejojnë të shohim gabimet, të ekzekutojmë komanda, të eksplorojmë variablat dhe shumë të tjera.
+- Ato mund te aksesohen me `key:F12` per shumicen e shfletuesve ne Windows. Chrome per Mac shtypim `key:Cmd+Opt+J`, Safari: `key:Cmd+Opt+C` (duhet ta aktivizioni si fillim).
 
-Now we have the environment ready. In the next section, we'll get down to JavaScript.
+Tani kemi gati mjedisin. Në seksionin e ardhshëm, do të merremi me JavaScript-in.
