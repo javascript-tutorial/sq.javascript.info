@@ -1,44 +1,44 @@
-# Code structure
+# Struktura e kodit
 
-The first thing we'll study is the building blocks of code.
+Gjëja e parë që do të studiojmë janë ndertimi i bllok-kodeve.
 
-## Statements
+## Deklaratat
 
-Statements are syntax constructs and commands that perform actions.
+Deklaratat janë struktura sintaksore dhe komanda që kryejnë veprime.
 
-We've already seen a statement, `alert('Hello, world!')`, which shows the message "Hello, world!".
+Tashmë kemi parë një deklaratë, `alert('Pershendetje, bota!')`, e cila shfaq mesazhin "Përshëndetje, bota!".
 
-We can have as many statements in our code as we want. Statements can be separated with a semicolon.
+Ne mund të kemi sa të dëshirojmë deklarata në kodin tonë. Deklaratat mund të ndahen me një pikëpresje.
 
-For example, here we split "Hello World" into two alerts:
+Për shembull, këtu ndajmë "Përshëndetje Bota" në dy deklarata të ndara:
 
 ```js run no-beautify
-alert('Hello'); alert('World');
+alert('Përshëndetje'); alert('Bota');
 ```
 
-Usually, statements are written on separate lines to make the code more readable:
+Zakonisht, deklaratat shkruhen në rreshta të ndarë për të bërë kodin më të lexueshëm:
 
 ```js run no-beautify
 alert('Hello');
 alert('World');
 ```
 
-## Semicolons [#semicolon]
+## Pikëpresja [#semicolon]
 
-A semicolon may be omitted in most cases when a line break exists.
+Një pikëpresje mund të hiqet në shumicën e rasteve kur ekziston një ndarje e rreshtit.
 
-This would also work:
+Kjo gjithashtu do të funksionojë:
 
 ```js run no-beautify
 alert('Hello')
 alert('World')
 ```
 
-Here, JavaScript interprets the line break as an "implicit" semicolon. This is called an [automatic semicolon insertion](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion).
+Këtu, JavaScript-i e interpreton ndarjen e rreshtit si një pikëpresje "implisite". Kjo quhet [automatic semicolon insertion](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion).
 
-**In most cases, a newline implies a semicolon. But "in most cases" does not mean "always"!**
+**Në shumicën e rasteve, një ndarje e rreshtit implikon një pikëpresje. Por "në shumicën e rasteve" nuk do të thotë "në të gjitha rastet".!**
 
-There are cases when a newline does not mean a semicolon. For example:
+Ka raste kur një nje rresht i ri nuk do të thotë një pikëpresje. Për shembull:
 
 ```js run no-beautify
 alert(3 +
@@ -46,114 +46,120 @@ alert(3 +
 + 2);
 ```
 
-The code outputs `6` because JavaScript does not insert semicolons here. It is intuitively obvious that if the line ends with a plus `"+"`, then it is an "incomplete expression", so the semicolon is not required. And in this case that works as intended.
+Kodi jep rezultatin `6` sepse JavaScript nuk fut pikëpresje këtu. Është intuitivisht e qartë që nëse rreshti përfundon me shenjën plus `"+"`, atëherë është një "shprehje e paplotë", kështu që pikëpresja nuk kërkohet. Dhe në këtë rast, kjo vepron siç është parashikuar.
 
-**But there are situations where JavaScript "fails" to assume a semicolon where it is really needed.**
+**Por ka situata kur JavaScript "dështon" të supozojë një pikëpresje aty ku është vërtet e nevojshme.**
 
-Errors which occur in such cases are quite hard to find and fix.
+Gabimet që ndodhin në këto raste janë të vështira për t'u gjetur dhe për t'u rregulluar.
 
 ````smart header="An example of an error"
-If you're curious to see a concrete example of such an error, check this code out:
+Nëse jeni të interesuar të shihni një shembull konkret të një gabimi të tillë, kontrolloni këtë kod:
 
 ```js run
 [1, 2].forEach(alert)
 ```
 
-No need to think about the meaning of the brackets `[]` and `forEach` yet. We'll study them later. For now, just remember the result of the code: it shows `1` then `2`.
+Nuk ka nevojë të merremi ende me kuptimin e thonjëzave `[]` dhe `forEach`. Do t'i studiojmë më vonë. Për tani, thjesht mbani mend rezultatin e kodit: shfaq 1, pastaj 2.
 
 Now, let's add an `alert` before the code and *not* finish it with a semicolon:
+Tani, shtojme një alert përpara kodit dhe mos e përfundo ate me një pikëpresje:
+
+
 
 ```js run no-beautify
-alert("There will be an error")
+alert("Ketu do te kete nje error")
 
 [1, 2].forEach(alert)
 ```
 
-Now if we run the code, only the first `alert` is shown and then we have an error!
-
-But everything is fine again if we add a semicolon after `alert`:
+Nëse ekzekutojmë kodin, do të shfaqet vetëm `alert` i parë dhe pastaj do të hasim një gabim!
+Por gjithçka është e rregullt përsëri nëse shtojmë një pikëpresje pas `alert`:
 ```js run
-alert("All fine now");
+alert("Gjithçka është e rregullt tani");
 
 [1, 2].forEach(alert)  
 ```
 
-Now we have the "All fine now" message followed by `1` and `2`.
+Tani kemi mesazhin "Gjithçka është e rregullt tani" e ndjekur nga `1` dhe `2`.
 
 
-The error in the no-semicolon variant occurs because JavaScript does not assume a semicolon before square brackets `[...]`.
+Gabimi në variantin pa pikëpresje ndodh sepse JavaScript nuk konsideron automatikisht një pikëpresje para kllapave katrore `[...]`.
 
-So, because the semicolon is not auto-inserted, the code in the first example is treated as a single statement. Here's how the engine sees it:
+Prandaj, sepse pikëpresja nuk futet automatikisht, kodi në shembullin e parë trajtohet si një deklaratë e vetme. Kështu e sheh motori kodin:
 
 ```js run no-beautify
-alert("There will be an error")[1, 2].forEach(alert)
+alert("Do të shfaqet një gabim")[1, 2].forEach(alert)
 ```
 
-But it should be two separate statements, not one. Such a merging in this case is just wrong, hence the error. This can happen in other situations.
+Por duhet të jenë dy deklarata të ndara, jo një. Një bashkim i tillë në këtë rast është gabim, prandaj shfaqet gabimi. Kjo mund të ndodhë edhe në situata të tjera.
+
 ````
 
 We recommend putting semicolons between statements even if they are separated by newlines. This rule is widely adopted by the community. Let's note once again -- *it is possible* to leave out semicolons most of the time. But it's safer -- especially for a beginner -- to use them.
+Ne rekomandojmë të vendosni pikëpresje midis deklaratave, edhe nëse ato janë të ndara me viza të reja. Ky rregull është i pranuar gjerësisht nga komuniteti. Le të theksojmë përsëri -- *është e mundur* të mos vendosni pikëpresje shpesh herë. Por është më e sigurt -- sidomos për një fillimtar -- të përdorni pikëpresjet.
 
-## Comments [#code-comments]
 
-As time goes on, programs become more and more complex. It becomes necessary to add *comments* which describe what the code does and why.
+## Komentet [#code-comments]
 
-Comments can be put into any place of a script. They don't affect its execution because the engine simply ignores them.
+Dita dites, programet bëhen gjithnjë e më kompleks. Bëhet e nevojshme të shtoni komentet që përshkruajnë çfarë bën kodi dhe pse e bën atë.
 
-**One-line comments start with two forward slash characters `//`.**
+Komentet mund të vendosen në çdo vend të skriptit. Ata nuk ndikojnë në ekzekutimin e tij, pasi motori thjesht i injoron ato.
 
-The rest of the line is a comment. It may occupy a full line of its own or follow a statement.
+**Komentet në një rresht fillon me dy karaktere `//`.**
 
-Like here:
+Pjesa tjetër e rreshtit është koment. Ajo mund të zëj një rresht të tërë ose të ndjekë një deklaratë.
+
+Si këtu:
 ```js run
-// This comment occupies a line of its own
-alert('Hello');
+// Kjo komentë zë një rresht të vetëm:
+alert('Pershendetje');
 
-alert('World'); // This comment follows the statement
+alert('Bota'); // Ky koment vjen pas deklarates
 ```
 
-**Multiline comments start with a forward slash and an asterisk <code>/&#42;</code> and end with an asterisk and a forward slash <code>&#42;/</code>.**
+**Komentet me shumë rreshta fillon me një / dhe një yll <code>/&#42;</code> dhe përfundon me një yll dhe një / <code>&#42;/</code>.**
 
-Like this:
+
+Si këtu:
 
 ```js run
-/* An example with two messages.
-This is a multiline comment.
+/* Nje shembull me dy mesazhe.
+Ky eshte nje koment me shume rreshta.
 */
-alert('Hello');
-alert('World');
+alert('Pershendetje');
+alert('Bota');
 ```
 
-The content of comments is ignored, so if we put code inside <code>/&#42; ... &#42;/</code>, it won't execute.
+Të dhënat e komenteve janë të injoruara, kështu që nëse vendosim kod brenda <code>/&#42; ... &#42;/</code>, ai nuk do të ekzekutohet.
 
-Sometimes it can be handy to temporarily disable a part of code:
 
+Ka raste kur mund të jetë e dobishme të çaktivizojmë përkohësisht një pjesë të kodit:
 ```js run
-/* Commenting out the code
-alert('Hello');
+/* Çaktivizimi i kodit duke e bërë atë koment
+alert('Pershendetje');
 */
-alert('World');
+alert('Bota');
 ```
 
-```smart header="Use hotkeys!"
-In most editors, a line of code can be commented out by pressing the `key:Ctrl+/` hotkey for a single-line comment and something like `key:Ctrl+Shift+/` -- for multiline comments (select a piece of code and press the hotkey). For Mac, try `key:Cmd` instead of `key:Ctrl` and `key:Option` instead of `key:Shift`.
+```smart header="Perdorni tastin!"
+Në shumicën e editoreve, një rresht i kodit mund të vendoset si koment duke shtypur tastin `key:Ctrl+/` për një koment në një rresht, ndërsa diçka si `key:Ctrl+Shift+/` -- për komente me shumë rreshta (selektoni një pjesë të kodit dhe shtypni tastin). Për kompjuterat Mac, provoni `key:Cmd` në vend të `key:Ctrl` dhe `key:Option` në vend të `key:Shift`.
 ```
 
-````warn header="Nested comments are not supported!"
-There may not be `/*...*/` inside another `/*...*/`.
+````warn header="Komentet e bashkuara nuk jane te suportuara!"
+Mund të mos ketë `/*...*/` brenda një tjetri `/*...*/`.
 
-Such code will die with an error:
+Një kod i tillë do të shfaqi një gabim:
 
 ```js run no-beautify
 /*
-  /* nested comment ?!? */
+  /* koment i bashkuar ?!? */
 */
-alert( 'World' );
+alert( 'Bota' );
 ```
 ````
 
-Please, don't hesitate to comment your code.
+Ju lutemi, mos hezitoni të komentoni kodin tuaj.
 
-Comments increase the overall code footprint, but that's not a problem at all. There are many tools which minify code before publishing to a production server. They remove comments, so they don't appear in the working scripts. Therefore, comments do not have negative effects on production at all.
+Komentet rrisin gjurmën e përgjithshme të kodit, por ky nuk është aspak problem. Ka shumë mjete që minimizojnë kodin përpara se të publikohen në një server prodhimi. Ata heqin komentet, në mënyrë që të mos shfaqen në skriptet e punës. Prandaj, komentet nuk kanë fare efekte negative në prodhim.
 
-Later in the tutorial there will be a chapter <info:code-quality> that also explains how to write better comments.
+Më vonë në tutorial do të ketë një kapitull <info:code-quality> qe gjithashtu shpjegon se si të shkruani komente më të mira.
