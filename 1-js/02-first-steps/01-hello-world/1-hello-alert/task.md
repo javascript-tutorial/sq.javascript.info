@@ -2,11 +2,11 @@ importance: 5
 
 ---
 
-# Show an alert
+# Shfaq nje alert
 
-Create a page that shows a message "I'm JavaScript!".
+Krijo nje faqe qe shfaq nje mesazh "Une jam JavaScript!".
 
-Do it in a sandbox, or on your hard drive, doesn't matter, just ensure that it works.
+Bëjeni në një sandbox, ose në hard diskun tuaj, nuk ka rëndësi, vetëm sigurohuni që të funksionojë.
 
 [demo src="solution"]
 

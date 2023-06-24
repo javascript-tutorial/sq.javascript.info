@@ -1,8 +1,8 @@
-The HTML code:
+Kodi i HTML:
 
 [html src="index.html"]
 
-For the file `alert.js` in the same folder:
+Per skedarin `alert.js` ne te njejtin folder:
 
 [js src="alert.js"]
 

@@ -2,8 +2,8 @@ importance: 5
 
 ---
 
-# Show an alert with an external script
+# Shfaq nje alert ne nje skript te jashtem
 
-Take the solution of the previous task <info:task/hello-alert>. Modify it by extracting the script content into an external file `alert.js`, residing in the same folder.
+Merrni zgjidhjen e detyrës së mëparshme <info:task/hello-alert>. Modifikojeni atë duke nxjerrë përmbajtjen e skriptit në një skedar të jashtëm `alert.js`, që ndodhet në të njëjtën folder.
 
-Open the page, ensure that the alert works.
+Hapni faqen, sigurohuni që alert të funksionojë.
