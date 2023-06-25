@@ -1,89 +1,90 @@
-# The modern mode, "use strict"
+# Menyra moderne, "use strict"
 
-For a long time, JavaScript evolved without compatibility issues. New features were added to the language while old functionality didn't change.
+Për një kohë të gjatë, JavaScript zhvillohej pa probleme të përputhshmërisë. Vlera shtesë u shtuan në gjuhë ndërsa funksionaliteti i vjetër nuk ndryshoi.
 
-That had the benefit of never breaking existing code. But the downside was that any mistake or an imperfect decision made by JavaScript's creators got stuck in the language forever.
+Kjo kishte përfitimin e mosprishjes së kodit ekzistues. Por disavantazhi ishte se çdo gabim ose vendim i paregullt i krijuar i JavaScript-it mbetej aty përgjithmonë.
 
-This was the case until 2009 when ECMAScript 5 (ES5) appeared. It added new features to the language and modified some of the existing ones. To keep the old code working, most such modifications are off by default. You need to explicitly enable them with a special directive: `"use strict"`.
+Kjo ishte ceshtja deri në vitin 2009 kur u paraqit ECMAScript 5 (ES5). Ai shtoi vlera të reja në gjuhë dhe ndryshoi disa prej atyre ekzistuese. Për të ruajtur funksionalitetin e kodit të vjetër, shumica e këtyre ndryshimeve janë të çaktivizuara si parazgjedhje. Ju duhet të aktivizoni ato në mënyrë të qartë me anë të një udhëzimi të veçantë: `"use strict"`.
 
 ## "use strict"
 
-The directive looks like a string: `"use strict"` or `'use strict'`. When it is located at the top of a script, the whole script works the "modern" way.
+Udhëzimi duket si një string: `"use strict"` ose `'use strict'`. Ai gjendet në fillim të një skripti, gjithë skripti funksionon në mënyrën "moderne".
 
-For example:
+Për shembull:
 
 ```js
 "use strict";
 
-// this code works the modern way
+// ky kod punon në mënyrën moderne.
 ...
 ```
 
-Quite soon we're going to learn functions (a way to group commands), so let's note in advance that `"use strict"` can be put at the beginning of a function. Doing that enables strict mode in that function only. But usually people use it for the whole script.
+Së shpejti do të mësojmë për funksionet (një mënyrë për të grupuar komandat), kështu që të shënojmë paraprakisht se `"use strict"` mund të vendoset në fillim të një funksioni. Duke bërë këtë, aktivizohet mënyra e strict në atë funksion vetëm. Por zakonisht njerëzit e përdorin për gjithë skriptin.
 
-````warn header="Ensure that \"use strict\" is at the top"
-Please make sure that `"use strict"` is at the top of your scripts, otherwise strict mode may not be enabled.
+````warn header="Për të garantuar që \"use strict\" eshte ne fillim"
+Ju lutem sigurohuni që `"use strict"` është në fillim të skripteve tuaja, në të kundërtën, script mode nuk do të aktivizohet.
 
-Strict mode isn't enabled here:
+Strict mode nuk eshte e aktivizuar ketu:
 
 ```js no-strict
-alert("some code");
-// "use strict" below is ignored--it must be at the top
+alert("disa kode");
+// "use strict" do te injorohet--ai duhet te jete ne fillim
 
 "use strict";
 
-// strict mode is not activated
+// strict node nuk eshte aktivizuar
 ```
 
-Only comments may appear above `"use strict"`.
+Vetëm komentet mund të shfaqen mbi `"use strict"`..
 ````
 
-```warn header="There's no way to cancel `use strict`"
-There is no directive like `"no use strict"` that reverts the engine to old behavior.
+```warn header="Nuk ka menyre per te kanceluar `use strict`"
+Nuk ka nje direktive te tille si `"no use strict"` Kjo rikthen motorin në sjelljen e vjetër.
 
-Once we enter strict mode, there's no going back.
+Pasi hyjmë në strict mode, nuk kemi mundësi të kthehemi mbrapa.
 ```
 
-## Browser console
+## Console i shfletuesit
 
-When you use a [developer console](info:devtools) to run code, please note that it doesn't `use strict` by default.
+Kur përdorni një [developer console](info:devtools) për të ekzekutuar kod, vini re se kjo nuk përdor `use strict` si parazgjedhje.
 
-Sometimes, when `use strict` makes a difference, you'll get incorrect results.
+Ndonjëherë, kur `use strict` bën një ndryshim, mund të merrni rezultate të pasakta.
 
-So, how to actually `use strict` in the console?
+Pra, Si te perdorim `use strict` ne console?
 
 First, you can try to press `key:Shift+Enter` to input multiple lines, and put `use strict` on top, like this:
+Së pari, mund të provoni të shtypni `key:Shift+Enter` për të vendosur disa rreshta të kodit dhe të vendosni `use strict` në fillim, si në këtë shembull:
+
 
 ```js
-'use strict'; <Shift+Enter for a newline>
-//  ...your code
+'use strict'; <Shift+Enter per nje rresht te ri>
+//  ...kodi juaj
 <Enter to run>
 ```
 
-It works in most browsers, namely Firefox and Chrome.
-
-If it doesn't, e.g. in an old browser, there's an ugly, but reliable way to ensure `use strict`. Put it inside this kind of wrapper:
+Kjo veprimtari funksionon në shumicën e shfletuesve, në veçanti Firefox dhe Chrome.
+Nëse kjo nuk funksionon, për shembull në shfletues të vjetër, ka një mënyrë tjeter, por e sigurtë për të perdorur `use strict`. Vendosni kodin brenda kësaj forme:
 
 ```js
 (function() {
   'use strict';
 
-  // ...your code here...
+  // ...kodi juaj ketu...
 })()
 ```
 
-## Should we "use strict"?
+##  Duhet te perdorim "use strict"?
 
-The question may sound obvious, but it's not so.
+Pyetja mund të tingëllojë e thjeshtë, por nuk është gjithmonë kështu.
 
-One could recommend to start scripts with `"use strict"`... But you know what's cool?
+Një rekomandim është të filloni skriptet me `"use strict"`... Por, e dini çfarë është interesante?
 
-Modern JavaScript supports "classes" and "modules" - advanced language structures (we'll surely get to them), that enable `use strict` automatically. So we don't need to add the `"use strict"` directive, if we use them.
+JavaScript-i modern suporton "klasat" dhe "modulet" - struktura të avancuara të gjuhës (sigurisht që do t'i mësojmë më vonë), që aktivizojnë "use strict" automatikisht. Prandaj, nuk kemi nevojë të shtojmë direktiven `"use strict"`, nëse i përdorim ato.
 
-**So, for now `"use strict";` is a welcome guest at the top of your scripts. Later, when your code is all in classes and modules, you may omit it.**
+**Kështu, për tani `"use strict";` është një mysafir i mirë në fillim të skripteve tuaja. Më vonë, kur kodi juaj është i gjithi në klase dhe module, mund ta lini pa e përdorur.**
 
-As of now, we've got to know about `use strict` in general.
+Deri tani, kemi mësuar për `use strict` në përgjithësi.
 
-In the next chapters, as we learn language features, we'll see the differences between the strict and old modes. Luckily, there aren't many and they actually make our lives better.
+Në kapitujt e ardhshëm, siç mësojmë për karakteristikat e gjuhës, do të shohim dallimet midis strict mode dhe mënyrës së vjetër. Fatmirësisht, ato nuk janë shumë dhe në të vërtetë përmirësojnë punen tonë.
 
-All examples in this tutorial assume strict mode unless (very rarely) specified otherwise.
+Të gjitha shembujt në këtë mesim supozojnë që strict mode është e aktivizuar, përveç rasteve kur është shënuar ndryshe (rrallë).
