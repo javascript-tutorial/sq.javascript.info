@@ -1,273 +1,277 @@
-# Variables
+# Variablat
 
-Most of the time, a JavaScript application needs to work with information. Here are two examples:
-1. An online shop -- the information might include goods being sold and a shopping cart.
-2. A chat application -- the information might include users, messages, and much more.
+Në shumicën e rasteve, një aplikacion JavaScript ka nevojë të punojë me informacion. Ja dy shembuj:
+1. Një dyqan online -- informacioni mund të përfshijë produktet që shiten dhe një shportë blerjesh.
+2. Një aplikacion chati -- informacioni mund të përfshijë përdoruesit, mesazhet dhe shumë gjëra të tjera.
 
-Variables are used to store this information.
 
-## A variable
+Variablat përdoren për të ruajtur këtë informacion.
 
-A [variable](https://en.wikipedia.org/wiki/Variable_(computer_science)) is a "named storage" for data. We can use variables to store goodies, visitors, and other data.
+## Nje variabel
 
-To create a variable in JavaScript, use the `let` keyword.
+Nje [variable](https://en.wikipedia.org/wiki/Variable_(computer_science)) eshte nje "named storage" per te dhenat. Ne mund të përdorim variablat për të ruajtur produkte, vizitorë dhe të dhëna të tjera.
+
+Për të krijuar një variabël në JavaScript, përdorni fjalën kyçe `let`.
 
 The statement below creates (in other words: *declares*) a variable with the name "message":
+Deklarata më poshtë krijon (me fjalë te tjera: *deklaron*) një variabël me emrin "message":
+
 
 ```js
 let message;
 ```
 
-Now, we can put some data into it by using the assignment operator `=`:
+Tani, mund të vendosim disa të dhëna në të duke përdorur operatorin e caktimit `=`:
 
 ```js
 let message;
 
 *!*
-message = 'Hello'; // store the string
+message = 'Pershendetje'; // ruan stringun
 */!*
 ```
 
-The string is now saved into the memory area associated with the variable. We can access it using the variable name:
+Stringu është tani ruajtur në hapësirën e memorjes që lidhet me variablën. Ne mund ta aksesojme atë duke përdorur emrin e variablës:
+
 
 ```js run
 let message;
-message = 'Hello!';
+message = 'Pershendetje!';
 
 *!*
-alert(message); // shows the variable content
+alert(message); // tregon përmbajtjen e variablës
 */!*
 ```
 
-To be concise, we can combine the variable declaration and assignment into a single line:
+Për të qenë të qartë, mund të kombinojmë deklarimin e variablës dhe caktimin në një rresht të vetëm:
 
 ```js run
-let message = 'Hello!'; // define the variable and assign the value
+let message = 'Pershendetje!'; // Definojme variablen dhe i japim nje vlere
 
-alert(message); // Hello!
+alert(message); // Pershendetje!
 ```
 
-We can also declare multiple variables in one line:
+Ne gjithashtu mund të deklarojmë disa variabla në një rresht:
 
 ```js no-beautify
-let user = 'John', age = 25, message = 'Hello';
+let user = 'Xhoni', age = 25, message = 'Pershendetje';
 ```
 
-That might seem shorter, but we don't recommend it. For the sake of better readability, please use a single line per variable.
+Kjo mund të duket më e shkurtër, por nuk e rekomandojmë. Për hir të lexueshmërisë më të mirë, ju lutemi përdorni një rresht të vetëm për çdo variabël.
 
-The multiline variant is a bit longer, but easier to read:
+Varianta me shumë rreshta është pak më gjatë, por më e lehtë për tu lexuar:
 
 ```js
-let user = 'John';
+let user = 'Xhoni';
 let age = 25;
-let message = 'Hello';
+let message = 'Pershendetje';
 ```
 
-Some people also define multiple variables in this multiline style:
+Disa persona gjithashtu përdorin stilin me shumë rreshta për të definuar disa variabla:
+
 ```js no-beautify
-let user = 'John',
+let user = 'Xhoni',
   age = 25,
-  message = 'Hello';
+  message = 'Pershendetje';
 ```
 
-...Or even in the "comma-first" style:
+...Ose madje në stilin "comma-first":
 
 ```js no-beautify
-let user = 'John'
+let user = 'Xhoni'
   , age = 25
-  , message = 'Hello';
+  , message = 'Pershendetje';
 ```
 
-Technically, all these variants do the same thing. So, it's a matter of personal taste and aesthetics.
+Teknikisht, të gjithë këto variante bëjnë të njëjtën gjë. Prandaj, është çështje e preferencës personale dhe estetikës se cili stil preferohet. 
+
 
 ````smart header="`var` instead of `let`"
-In older scripts, you may also find another keyword: `var` instead of `let`:
+Në skriptet më të vjetra, mund të hasni edhe fjalë kyçe të tjera: `var` në vend të `let`:
 
 ```js
-*!*var*/!* message = 'Hello';
+*!*var*/!* message = 'Pershendetje';
 ```
 
-The `var` keyword is *almost* the same as `let`. It also declares a variable, but in a slightly different, "old-school" way.
+Fjala kyçe `var` është  *pothuajse* e njëjtë me `let`. Ajo gjithashtu deklaron një variabël, por në një mënyrë pak të ndryshme, "old-school".
 
-There are subtle differences between `let` and `var`, but they do not matter for us yet. We'll cover them in detail in the chapter <info:var>.
+Ka dallime të hollësishme mes `let` dhe `var`, por ato nuk kanë rëndësi për ne ende. Do t'i trajtojmë ato në detaje në kapitullin <info:var>.
 ````
 
-## A real-life analogy
+## Një analogji nga jeta reale
 
-We can easily grasp the concept of a "variable" if we imagine it as a "box" for data, with a uniquely-named sticker on it.
+Mund të kuptojmë lehtësisht konceptin e një "variabli" nëse e imagjinojmë atë si një "kuti" për të dhënat, me një etiketë me emër unik mbi të.
 
-For instance, the variable `message` can be imagined as a box labeled `"message"` with the value `"Hello!"` in it:
+Për shembull, variabla `message`  mund të paraqitet si një kuti me etiketën `"message"` dhe me vlerën "Përshëndetje!" në brendësi:
 
 ![](variable.svg)
 
-We can put any value in the box.
+Mund të vendosim çdo vlerë në këtë kuti.
 
-We can also change it as many times as we want:
+Mund ta ndryshojmë atë aq herë sa të dëshirojmë:
 ```js run
 let message;
 
-message = 'Hello!';
+message = 'Pershendetje!';
 
-message = 'World!'; // value changed
+message = 'Bota!'; // vlera ndryshoj
 
 alert(message);
 ```
 
-When the value is changed, the old data is removed from the variable:
+Kur vlera ndryshohet, të dhënat e mëparshme largohen nga variabla:
 
 ![](variable-change.svg)
 
-We can also declare two variables and copy data from one into the other.
+Mund të deklarojmë edhe dy variabla dhe të kopjojmë të dhënat nga njëra në tjetrën.
 
 ```js run
-let hello = 'Hello world!';
+let hello = 'Pershendetje bota!';
 
 let message;
 
 *!*
-// copy 'Hello world' from hello into message
+// kopjo 'Pershendetje bota' nga hello ne message
 message = hello;
 */!*
 
-// now two variables hold the same data
-alert(hello); // Hello world!
-alert(message); // Hello world!
+// tashme dy variabla mbajnë të njëjtën të dhënë.
+alert(hello); // Pershendetje bota!
+alert(message); // Pershendetje bota!
 ```
 
-````warn header="Declaring twice triggers an error"
-A variable should be declared only once.
+````warn header="Deklarimi i një variabli dy herë shkakton një gabim."
+Një variabël duhet të deklarohet vetëm një herë.
 
-A repeated declaration of the same variable is an error:
+Një deklarim i përsëritur i të njëjtit variabël është një gabim:
 
 ```js run
-let message = "This";
+let message = "Ky";
 
-// repeated 'let' leads to an error
-let message = "That"; // SyntaxError: 'message' has already been declared
+// perseritja e  'let' na sjell nje gabim
+let message = "Kjo"; // SyntaxError: 'message' has already been declared
 ```
-So, we should declare a variable once and then refer to it without `let`.
+Prandaj, duhet ta deklarojmë një variabël një herë dhe pastaj të referohemi në të pa përdorur `let` përsëri.
 ````
 
-```smart header="Functional languages"
-It's interesting to note that there exist [functional](https://en.wikipedia.org/wiki/Functional_programming) programming languages, like [Scala](http://www.scala-lang.org/) or [Erlang](http://www.erlang.org/) that forbid changing variable values.
+```smart header="Gjuhët funksionale"
+Është interesante të theksohet se ekzistojnë gjuhë programimi [funksionale](https://en.wikipedia.org/wiki/Functional_programming), si [Scala](http://www.scala-lang.org/) ose [Erlang] (http://www.erlang.org/) që nuk e lejojne ndryshimin e vlerave të variablave.
 
-In such languages, once the value is stored "in the box", it's there forever. If we need to store something else, the language forces us to create a new box (declare a new variable). We can't reuse the old one.
+Në këto gjuhë, kur një vlerë ruhet "në kuti", ajo qëndron aty përherë. Nëse duhet të ruajmë diçka tjetër, gjuha na detyron të krijojmë një kuti të re (të deklarojmë një variabël të re). Nuk mund të ri-përdorim të vjetrën.
 
-Though it may seem a little odd at first sight, these languages are quite capable of serious development. More than that, there are areas like parallel computations where this limitation confers certain benefits. Studying such a language (even if you're not planning to use it soon) is recommended to broaden the mind.
+Megjithëse mund të duket pak e çuditshme në shikim të parë, këto gjuhë janë mjaft të afta për projekte serioze. Për më tepër, ka fusha si llogaritjet paralele ku ky kufizim jep përfitime të caktuara. Studimi i një gjuhe të tillë (edhe nëse nuk planifikoni ta përdorni së shpejti) rekomandohet për të zgjeruar menyren e te menduarit.
 ```
 
-## Variable naming [#variable-naming]
+## Emërtimi i variablave [#variable-naming]
 
-There are two limitations on variable names in JavaScript:
+Ekzistojnë dy kufizime për emrat e variablave në JavaScript:
 
-1. The name must contain only letters, digits, or the symbols `$` and `_`.
-2. The first character must not be a digit.
+1. Emri duhet të përmbajë vetëm shkronja, shifra ose simbolet `$` dhe `_`.
+2. Karakteri i parë nuk duhet të jetë një shifër.
 
-Examples of valid names:
+Shembuj të emrave të vlefshëm:
 
 ```js
 let userName;
 let test123;
 ```
 
-When the name contains multiple words, [camelCase](https://en.wikipedia.org/wiki/CamelCase) is commonly used. That is: words go one after another, each word except first starting with a capital letter: `myVeryLongName`.
+Kur emri përmban shumë fjalë, zakonisht përdoret [camelCase](https://en.wikipedia.org/wiki/CamelCase). Kjo do të thotë: fjalët shkojnë njëra pas tjetrës, secila fjalë përveç se së pari fillon me një shkronjë të madhe: `myVeryLongName`.
 
-What's interesting -- the dollar sign `'$'` and the underscore `'_'` can also be used in names. They are regular symbols, just like letters, without any special meaning.
+Ajo që është interesante -- shenja e dollarit `'$'` dhe nënvizimi `'_'` mund të përdoren gjithashtu në emra. Janë simbole të rregullta, si shkronjat, pa ndonjë kuptim të veçantë.
 
-These names are valid:
+Këta emra janë të vlefshëm:
 
 ```js run untrusted
-let $ = 1; // declared a variable with the name "$"
-let _ = 2; // and now a variable with the name "_"
+let $ = 1; // deklaroi një variabël me emrin "$"
+let _ = 2; // dhe tani një variabël me emrin "_"
 
 alert($ + _); // 3
 ```
 
-Examples of incorrect variable names:
+Shembuj të emrave të gabuar të variablave:
 
 ```js no-beautify
-let 1a; // cannot start with a digit
+let 1a; // nuk mund të fillojë me një shifër
 
-let my-name; // hyphens '-' aren't allowed in the name
+let my-name; // vizat '-' nuk lejohen në emër
 ```
 
-```smart header="Case matters"
-Variables named `apple` and `AppLE` are two different variables.
+```smart header="Ka rëndësi rasti"
+Variablat e quajtur "apple" dhe "AppLE" janë dy variabla të ndryshëm.
 ```
 
-````smart header="Non-Latin letters are allowed, but not recommended"
-It is possible to use any language, including cyrillic letters or even hieroglyphs, like this:
+````smart header="Shkronjat jo latine lejohen, por nuk rekomandohen"
+Është e mundur të përdoret çdo gjuhë, duke përfshirë shkronjat cirilike apo edhe hieroglifet, si kjo:
 
 ```js
 let имя = '...';
 let 我 = '...';
 ```
 
-Technically, there is no error here. Such names are allowed, but there is an international convention to use English in variable names. Even if we're writing a small script, it may have a long life ahead. People from other countries may need to read it some time.
+Teknikisht, këtu nuk ka asnjë gabim. Emra të tillë lejohen, por ekziston një konventë ndërkombëtare për përdorimin e anglishtes në emrat e variablave. Edhe nëse po shkruajmë një skenar të vogël, ai mund të ketë një jetë të gjatë përpara. Njerëzit nga vende të tjera mund të kenë nevojë ta lexojnë atë për ca kohë.
 ````
 
-````warn header="Reserved names"
-There is a [list of reserved words](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords), which cannot be used as variable names because they are used by the language itself.
+````warn header="Emrat e rezervuar"
+Ekziston një [listë e fjalëve të rezervuara](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords), të cilat nuk mund të përdoren si emra variablash sepse përdoren nga vetë Javascript.
 
-For example: `let`, `class`, `return`, and `function` are reserved.
+Për shembull: `let`, `class`, `return`, dhe `function` janë të rezervuara.
 
-The code below gives a syntax error:
+Kodi më poshtë jep një gabim sintaksor:
 
 ```js run no-beautify
-let let = 5; // can't name a variable "let", error!
-let return = 5; // also can't name it "return", error!
+let let = 5; // nuk mund të emërojë një variabël "let", gabim!
+let return = 5; // gjithashtu nuk mund ta emërtoj "return", gabim!
 ```
 ````
 
-````warn header="An assignment without `use strict`"
+````warn header="Një detyrë pa `use strict`"
 
-Normally, we need to define a variable before using it. But in the old times, it was technically possible to create a variable by a mere assignment of the value without using `let`. This still works now if we don't put `use strict` in our scripts to maintain compatibility with old scripts.
+Normalisht, ne duhet të përcaktojmë një variabël përpara se ta përdorim atë. Por në kohët e vjetra, teknikisht ishte e mundur të krijohej një variabël me një caktim të thjeshtë të vlerës pa përdorur `let`. Kjo ende funksionon tani nëse nuk vendosim `use strict` në skriptet tona për të ruajtur përputhshmërinë me skriptet e vjetra.
 
 ```js run no-strict
-// note: no "use strict" in this example
-
-num = 5; // the variable "num" is created if it didn't exist
+// Shënim: nuk ka "use strict" në këtë shembull
+num = 5; // variabli "num" krijohet nëse nuk ekziston
 
 alert(num); // 5
 ```
 
-This is a bad practice and would cause an error in strict mode:
+Kjo është një praktikë e keqe dhe do të shkaktonte një gabim në strict mode:
 
 ```js
 "use strict";
 
 *!*
-num = 5; // error: num is not defined
+num = 5; // gabim: num nuk është përcaktuar
 */!*
 ```
 ````
 
-## Constants
+## Konstantet
 
-To declare a constant (unchanging) variable, use `const` instead of `let`:
+Per te deklaruar nje konstante (variabel e pandryshueshme), perdorim `const` në vend të `let`:
 
 ```js
 const myBirthday = '18.04.1982';
 ```
 
-Variables declared using `const` are called "constants". They cannot be reassigned. An attempt to do so would cause an error:
+Variablat e deklaruar duke përdorur 'const' quhen "konstante". Ata nuk mund të ricaktohen. Një përpjekje për ta bërë këtë do të shkaktonte një gabim:
 
 ```js run
 const myBirthday = '18.04.1982';
 
-myBirthday = '01.01.2001'; // error, can't reassign the constant!
+myBirthday = '01.01.2001'; // gabim, nuk mund të ricaktohet konstantja!
 ```
 
-When a programmer is sure that a variable will never change, they can declare it with `const` to guarantee and clearly communicate that fact to everyone.
+Kur një programues është i sigurt se një variabël nuk do të ndryshojë kurrë, ai mund ta deklarojë atë me 'const' për të garantuar dhe komunikuar qartë këtë fakt për të gjithë.
 
+### Konstantet e shkronjave të mëdha
 
-### Uppercase constants
+Ekziston një praktikë e përhapur për të përdorur konstante si pseudonime për vlerat e vështira për t'u mbajtur mend që janë të njohura përpara ekzekutimit.
 
-There is a widespread practice to use constants as aliases for difficult-to-remember values that are known prior to execution.
+Konstante të tilla emërtohen duke përdorur shkronja të mëdha dhe nënvizime.
 
-Such constants are named using capital letters and underscores.
-
-For instance, let's make constants for colors in so-called "web" (hexadecimal) format:
+Për shembull, le të bëjmë konstante për ngjyrat në të ashtuquajturin format "web" (hexadecimal):
 
 ```js run
 const COLOR_RED = "#F00";
@@ -275,69 +279,68 @@ const COLOR_GREEN = "#0F0";
 const COLOR_BLUE = "#00F";
 const COLOR_ORANGE = "#FF7F00";
 
-// ...when we need to pick a color
+// ...kur na duhet te zgjedhim nje ngjyre
 let color = COLOR_ORANGE;
 alert(color); // #FF7F00
 ```
 
-Benefits:
+Përfitimet:
 
-- `COLOR_ORANGE` is much easier to remember than `"#FF7F00"`.
-- It is much easier to mistype `"#FF7F00"` than `COLOR_ORANGE`.
-- When reading the code, `COLOR_ORANGE` is much more meaningful than `#FF7F00`.
+- `COLOR_ORANGE` është shumë më e lehtë për t'u mbajtur mend se `"#FF7F00"`.
+- Është shumë më e lehtë të shkruash gabim `"#FF7F00"` sesa `COLOR_ORANGE`.
+- Kur lexojme kodin, `COLOR_ORANGE` ka me shume kuptim se sa `#FF7F00`.
 
-When should we use capitals for a constant and when should we name it normally? Let's make that clear.
+Kur duhet të përdorim kapitale për një konstante dhe kur duhet ta emërtojmë atë normalisht? Le ta bëjmë të qartë.
 
-Being a "constant" just means that a variable's value never changes. But there are constants that are known prior to execution (like a hexadecimal value for red) and there are constants that are *calculated* in run-time, during the execution, but do not change after their initial assignment.
+Të qenit "konstante" thjesht do të thotë që vlera e kesaj variable nuk ndryshon kurrë. Por ka konstante që njihen para ekzekutimit (si një vlerë heksadecimal për të kuqe) dhe ka konstante që *llogariten* në kohën e ekzekutimit, gjatë ekzekutimit, por nuk ndryshojnë pas caktimit të tyre fillestar.
 
-For instance:
+Për shembull:
 ```js
-const pageLoadTime = /* time taken by a webpage to load */;
+const pageLoadTime = /* koha që i duhet një faqe interneti për t'u ngarkuar */;
 ```
 
-The value of `pageLoadTime` is not known prior to the page load, so it's named normally. But it's still a constant because it doesn't change after assignment.
+Vlera e `pageLoadTime` nuk dihet para ngarkimit të faqes, kështu që emërtohet normalisht. Por është ende një konstante sepse nuk ndryshon pas caktimit.
 
-In other words, capital-named constants are only used as aliases for "hard-coded" values.  
+Me fjalë të tjera, konstantet e emërtuara me kapital përdoren vetëm si pseudonime për vlerat "hard-coded".
 
-## Name things right
+## Emërtoni gjërat siç duhen
 
-Talking about variables, there's one more extremely important thing.
+Duke folur për variablat, ka edhe një gjë jashtëzakonisht të rëndësishme.
 
-A variable name should have a clean, obvious meaning, describing the data that it stores.
+Emri i variables duhet të ketë një kuptim të pastër, të qartë, duke përshkruar të dhënat që ruan.
 
-Variable naming is one of the most important and complex skills in programming. A quick glance at variable names can reveal which code was written by a beginner versus an experienced developer.
+Emërtimi i variablave është një nga aftësitë më të rëndësishme dhe komplekse në programim. Një vështrim i shpejtë në emrat e variablave mund të zbulojë se cili kod është shkruar nga një fillestar kundrejt një programuesi me përvojë.
 
-In a real project, most of the time is spent modifying and extending an existing code base rather than writing something completely separate from scratch. When we return to some code after doing something else for a while, it's much easier to find information that is well-labeled. Or, in other words, when the variables have good names.
+Në një projekt real, pjesa më e madhe e kohës harxhohet duke modifikuar dhe zgjeruar një bazë kodi ekzistues në vend që të shkruani diçka krejtësisht të ndarë nga e para. Kur i kthehemi një kodi pasi kemi bërë diçka tjetër për një kohë, është shumë më e lehtë të gjejmë informacione të etiketuara mirë. Ose, me fjalë të tjera, kur variablat kanë emra të mirë.
 
-Please spend time thinking about the right name for a variable before declaring it. Doing so will repay you handsomely.
+Ju lutemi kaloni kohë duke menduar për emrin e duhur për një variabël përpara se ta deklaroni atë. Duke vepruar kështu do t'ju shpërblejë me vone.
+Disa rregulla të mira për t'u ndjekur janë:
 
-Some good-to-follow rules are:
+- Përdorni emra të lexueshëm nga njeriu si 'perdorues' ose 'shportaIme'.
+- Qëndroni larg shkurtesave ose emrave të shkurtër si `a`, `b`, `c`, përveç nëse e dini vërtet se çfarë po bëni.
+- Bëjini emrat maksimalisht përshkrues dhe konciz. Shembuj të emrave të këqij janë "data" dhe "value". Emra të tillë nuk thonë asgjë. Është në rregull t'i përdorësh ato vetëm nëse konteksti i kodit e bën jashtëzakonisht të qartë se cilat të dhëna ose vlerë i referohet variablit.
+- Bini dakord për kushtet brenda ekipit tuaj dhe në mendjen tuaj. Nëse një vizitor i faqes quhet "user", atëherë duhet t'i emërtojmë variablat përkatës "currentUser" ose "newUser" në vend të "currentVisitor" ose "newManInTown".
 
-- Use human-readable names like `userName` or `shoppingCart`.
-- Stay away from abbreviations or short names like `a`, `b`, `c`, unless you really know what you're doing.
-- Make names maximally descriptive and concise. Examples of bad names are `data` and `value`. Such names say nothing. It's only okay to use them if the context of the code makes it exceptionally obvious which data or value the variable is referencing.
-- Agree on terms within your team and in your own mind. If a site visitor is called a "user" then we should name related variables `currentUser` or `newUser` instead of `currentVisitor` or `newManInTown`.
+Tingëllon e thjeshtë? Në të vërtetë është, por krijimi i emrave përshkrues dhe konciz të variablave në praktikë nuk është kështu. Shkoni për të.
+```smart header="Ripërdorni ose krijoni?"
 
-Sounds simple? Indeed it is, but creating descriptive and concise variable names in practice is not. Go for it.
+Dhe shënimi i fundit. Ka disa programues dembelë që, në vend që të deklarojnë variabla të reja, priren të ripërdorin ato ekzistuese.
 
-```smart header="Reuse or create?"
-And the last note. There are some lazy programmers who, instead of declaring new variables, tend to reuse existing ones.
+Si rezultat, variablat e tyre janë si kuti në të cilat njerëzit hedhin gjëra të ndryshme pa ndryshuar etiketat e tyre. Çfarë ka brenda kutisë tani? Kush e di? Duhet të afrohemi dhe të kontrollojmë.
 
-As a result, their variables are like boxes into which people throw different things without changing their stickers. What's inside the box now? Who knows? We need to come closer and check.
+Programues të tillë kursejnë pak në deklarimin e variablave, por humbasin dhjetë herë më shumë në korrigjimin e gabimeve.
 
-Such programmers save a little bit on variable declaration but lose ten times more on debugging.
+Një variabël shtesë është e mirë, jo e keqe.
 
-An extra variable is good, not evil.
-
-Modern JavaScript minifiers and browsers optimize code well enough, so it won't create performance issues. Using different variables for different values can even help the engine optimize your code.
+Minifikuesit dhe shfletuesit modernë JavaScript optimizojnë mjaft mirë kodin, kështu që nuk do të krijojë probleme të performancës. Përdorimi i variablave të ndryshëm për vlera të ndryshme madje mund të ndihmojë motorin të optimizojë kodin tuaj.
 ```
 
-## Summary
+## Përmbledhje
 
-We can declare variables to store data by using the `var`, `let`, or `const` keywords.
+Ne mund të deklarojmë variabla për të ruajtur të dhënat duke përdorur fjalët kyçe "var", "let" ose "const".
 
-- `let` -- is a modern variable declaration.
-- `var` -- is an old-school variable declaration. Normally we don't use it at all, but we'll cover subtle differences from `let` in the chapter <info:var>, just in case you need them.
-- `const` -- is like `let`, but the value of the variable can't be changed.
+- `let` -- menyra moderne e te deklaruarit nje variabel.
+- `var` -- eshte menyra e vjeter e deklarimit te variables. Normalisht, ne nuk e përdorim fare, por do të mbulojmë ndryshimet delikate nga `let` ne kapitullin <info:var>, ne rast se do ju duhet.
+- `const` -- eshte si `let`, por vlera e variables nuk ndryshon.
 
-Variables should be named in a way that allows us to easily understand what's inside them.
+Variablat duhet të emërtohen në një mënyrë që të na lejojë të kuptojmë lehtësisht se çfarë ka brenda tyre.
