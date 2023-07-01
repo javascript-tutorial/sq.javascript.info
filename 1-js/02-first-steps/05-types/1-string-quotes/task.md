@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# String quotes
+# Thonjzat e stringjeve
 
-What is the output of the script?
+Cili do te jete outputi i skriptit?
 
 ```js
 let name = "Ilya";
