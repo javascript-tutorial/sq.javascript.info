@@ -1,7 +1,8 @@
-In the code below, each line corresponds to the item in the task list.
+Në kodin më poshtë, çdo rresht korrespondon me artikullin në listën e detyrave.
+
 
 ```js run
-let admin, name; // can declare two variables at once
+let admin, name; // mund të deklarojë dy variabla njëherësh
 
 name = "John";
 

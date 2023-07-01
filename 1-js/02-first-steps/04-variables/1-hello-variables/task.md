@@ -2,9 +2,9 @@ importance: 2
 
 ---
 
-# Working with variables
+# Te punojme me variablat
 
-1. Declare two variables: `admin` and `name`.
-2. Assign the value `"John"` to `name`.
-3. Copy the value from `name` to `admin`.
-4. Show the value of `admin` using `alert` (must output "John").
+1. Deklaroni dy variabla: `admin` dhe `name`.
+2. Cakto vlerën `"John"` te `name`.
+3. Kopjo vlerën nga `name` në `admin`.
+4. Trego vlerën e `admin` duke përdorur `alert` (duhet të dalë "John").

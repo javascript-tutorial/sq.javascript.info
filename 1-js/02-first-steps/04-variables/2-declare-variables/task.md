@@ -2,7 +2,7 @@ importance: 3
 
 ---
 
-# Giving the right name
+# Ti japim emrin e duhur
 
-1. Create a variable with the name of our planet. How would you name such a variable?
-2. Create a variable to store the name of a current visitor to a website. How would you name that variable?
+1. Krijo një variabël me emrin e planetit tonë. Si do ta emërtoni një variabël të tillë?
+2. Krijoni një variabël për të ruajtur emrin e një vizitori aktual në një faqe interneti. Si do ta emërtonit atë variabël?
