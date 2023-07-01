@@ -1,105 +1,104 @@
-# Interaction: alert, prompt, confirm
-
-As we'll be using the browser as our demo environment, let's see a couple of functions to interact with the user: `alert`, `prompt` and `confirm`.
+# Ndërveprimet: alert, prompt, confirm
+Duke qenë se do të përdorim shfletuesin si mjedisin tonë demonstrues, le të shohim disa funksione për të bashkëvepruar me përdoruesin: `alert`, `prompt` dhe `confirm`.
 
 ## alert
 
-This one we've seen already. It shows a message and waits for the user to press "OK".
+Këtë e kemi parë tashmë. Shfaq një mesazh dhe pret që përdoruesi të shtypë "OK".
 
-For example:
+Per shembull:
 
 ```js run
-alert("Hello");
+alert("Pershendetje");
 ```
 
-The mini-window with the message is called a *modal window*. The word "modal" means that the visitor can't interact with the rest of the page, press other buttons, etc, until they have dealt with the window. In this case -- until they press "OK".
+Dritarja e vogël me mesazh quhet *dritare modale*. Fjala "modale" nënkupton se vizitori nuk mund të nderveproj me pjesën tjetër të faqes, të shtypë butona të tjera etj., derisa të merret me dritaren. Në këtë rast -- derisa të shtypin "OK".
 
 ## prompt
 
-The function `prompt` accepts two arguments:
+Funksioni `prompt` pranon dy argumenta:
 
 ```js no-beautify
 result = prompt(title, [default]);
 ```
 
-It shows a modal window with a text message, an input field for the visitor, and the buttons OK/Cancel.
+Shfaq një dritare modale me një mesazh tekstual, një fushë inputi për vizitorin dhe butonat OK/Cancel.
 
 `title`
-: The text to show the visitor.
+: Teksti për të treguar vizitorin.
 
 `default`
-: An optional second parameter, the initial value for the input field.
+: Një parametër i dytë opsional, vlera fillestare për fushën e inputit.
 
-```smart header="The square brackets in syntax `[...]`"
-The square brackets around `default` in the syntax above denote that the parameter is optional, not required.
+```smart header="Kllapat katrore ne sintakse `[...]`"
+Kllapat katrore përreth `default` në sintaksën e mësipërme tregojnë se parametri është opsional, nuk kërkohet me domodoshmeri.
 ```
 
-The visitor can type something in the prompt input field and press OK. Then we get that text in the `result`. Or they can cancel the input by pressing Cancel or hitting the `key:Esc` key, then we get `null` as the `result`.
+Vizitori mund të shkruajë diçka në fushën e inputit dhe të shtypë OK. Pastaj e marrim atë tekst në 'result'. Ose ata mund të anulojnë hyrjen duke shtypur Cancel ose duke shtypur tastin 'tastin:Esc', atehere marrim `null` si `result`.
 
-The call to `prompt` returns the text from the input field or `null` if the input was canceled.
+Thirrja tek `prompt` kthen tekstin nga fusha e input ose `null` nëse hyrja është anuluar.
 
-For instance:
+Per shembull:
 
 ```js run
-let age = prompt('How old are you?', 100);
+let age = prompt('Sa vjec jeni ju?', 100);
 
-alert(`You are ${age} years old!`); // You are 100 years old!
+alert(`Ju jeni ${age} vjec!`); // Ju jeni 100 vjec!
 ```
 
-````warn header="In IE: always supply a `default`"
-The second parameter is optional, but if we don't supply it, Internet Explorer will insert the text `"undefined"` into the prompt.
+````warn header="Ne IE: gjithmone perdorni `default`"
+Parametri i dytë është opsional, por nëse nuk e japim, Internet Explorer do të fusë tekstin `"undefined"` në prompt.
 
-Run this code in Internet Explorer to see:
+Ekzekutoni këtë kod në Internet Explorer për të parë:
 
 ```js run
 let test = prompt("Test");
 ```
 
-So, for prompts to look good in IE, we recommend always providing the second argument:
+Pra, që kërkesat të duken mirë në IE, ne rekomandojmë që gjithmonë të jepni argumentin e dytë:
 
 ```js run
-let test = prompt("Test", ''); // <-- for IE
+let test = prompt("Test", ''); // <-- per IE
 ```
 ````
 
 ## confirm
 
-The syntax:
+Sintaksa:
 
 ```js
 result = confirm(question);
 ```
 
-The function `confirm` shows a modal window with a `question` and two buttons: OK and Cancel.
+Funksioni `confirm` tregon një dritare modale me një `pyetje` dhe dy butona: OK dhe Cancel.
 
-The result is `true` if OK is pressed and `false` otherwise.
+Rezultati është `true` nëse shtypet OK dhe `false` ndryshe.
 
-For example:
+Per shembull:
 
 ```js run
-let isBoss = confirm("Are you the boss?");
+let isBoss = confirm("A jeni ju bosi?");
 
-alert( isBoss ); // true if OK is pressed
+alert( isBoss ); // true nese OK eshte shtypur
 ```
 
-## Summary
+## Permbledhje
 
-We covered 3 browser-specific functions to interact with visitors:
+Ne mbuluam 3 funksione specifike të shfletuesit për të bashkëvepruar me vizitorët:
 
 `alert`
-: shows a message.
+: shfaq nje mesazh.
 
 `prompt`
-: shows a message asking the user to input text. It returns the text or, if Cancel button or `key:Esc` is clicked, `null`.
+: tregon një mesazh që i kërkon përdoruesit të fusë tekst. Ai kthen tekstin ose, nëse klikohet butoni Cancel ose `key:Esc`, `null`.
 
 `confirm`
-: shows a message and waits for the user to press "OK" or "Cancel". It returns `true` for OK and `false` for Cancel/`key:Esc`.
+: shfaq nje mesazh dhe pret qe perdoruesi te shtypi "OK" ose "Cancel". Kthen vleren `true` per OK dhe `false` per Cancel/`key:Esc`.
 
-All these methods are modal: they pause script execution and don't allow the visitor to interact with the rest of the page until the window has been dismissed.
+Të gjitha këto metoda janë modale: ato ndalojnë ekzekutimin e skriptit dhe nuk e lejojnë vizitorin të ndërveprojë me pjesën tjetër të faqes derisa dritarja të hiqet.
 
-There are two limitations shared by all the methods above:
+Ekzistojnë dy kufizime të përbashkëta nga të gjitha metodat e mësipërme:
 
-1. The exact location of the modal window is determined by the browser. Usually, it's in the center.
-2. The exact look of the window also depends on the browser. We can't modify it.
+1. Vendndodhja e saktë e dritares modale përcaktohet nga shfletuesi. Zakonisht është në qendër.
+2. Pamja e saktë e dritares varet gjithashtu nga shfletuesi. Nuk mund ta modifikojmë.
 
-That is the price for simplicity. There are other ways to show nicer windows and richer interaction with the visitor, but if "bells and whistles" do not matter much, these methods work just fine.
+Ky është çmimi i thjeshtësisë. Ka mënyra të tjera për të treguar dritare më të bukura dhe ndërveprim më të pasur me vizitorin, por nëse "këmbanat dhe bilbilat" nuk kanë shumë rëndësi, këto metoda funksionojnë mirë.

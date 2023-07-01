@@ -2,8 +2,8 @@ importance: 4
 
 ---
 
-# A simple page
+# Nje faqe e thjeshte
 
-Create a web-page that asks for a name and outputs it.
+Krijo nje web-faqe qe kerkon per emrin dhe e shfaq ate.
 
 [demo]
