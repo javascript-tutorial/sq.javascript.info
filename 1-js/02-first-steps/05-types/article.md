@@ -259,7 +259,7 @@ Tre rreshtat e fundit mund të kenë nevojë për shpjegim shtesë:
 2. Rezultati i `typeof null` është `object`. Ky është një gabim i njohur zyrtarisht në sjelljen e `typeof`, që vjen nga ditët e para të JavaScript dhe ruhet për kompaktibilitet. Definitivisht, `null` nuk është një `object`. Është një vlerë e veçantë me një lloj më vete.
 3. Rezultati i `typeof alert` eshte `"function"`, sepse `alert` eshte nje funksion. Ne do të studiojmë funksionet në kapitujt e ardhshëm ku do të shohim gjithashtu se nuk ka asnjë lloj të veçantë "funksioni" në JavaScript. Funksionet i përkasin llojit të objektit. Por `typeof` i trajton ato ndryshe, duke i kthyer "funksionin"`. Kjo gjithashtu vjen nga ditët e para të JavaScript. Teknikisht, një sjellje e tillë nuk është e saktë, por mund të jetë e përshtatshme në praktikë.
 
-## Summary
+## Permbledhje
 
 Ekzistojnë 8 lloje bazë të të dhënave në JavaScript.
 
