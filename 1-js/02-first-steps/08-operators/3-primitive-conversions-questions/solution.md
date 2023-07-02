@@ -17,10 +17,10 @@ undefined + 1 = NaN // (6)
 " \t \n" - 2 = -2 // (7)
 ```
 
-1. The addition with a string `"" + 1` converts `1` to a string: `"" + 1 = "1"`, and then we have `"1" + 0`, the same rule is applied.
-2. The subtraction `-` (like most math operations) only works with numbers, it converts an empty string `""` to `0`.
-3. The addition with a string appends the number `5` to the string.
-4. The subtraction always converts to numbers, so it makes `"  -9  "` a number `-9` (ignoring spaces around it).
-5. `null` becomes `0` after the numeric conversion.
-6. `undefined` becomes `NaN` after the numeric conversion.
-7. Space characters, are trimmed off string start and end when a string is converted to a number. Here the whole string consists of space characters, such as `\t`, `\n` and a "regular" space between them. So, similarly to an empty string, it becomes `0`.
+1. Shtimi me një string `"" + 1` konverton `1` në një string: `"" + 1 = "1"`, dhe më pas kemi `"1" + 0`, zbatohet i njëjti rregull.
+2. Zbritja `-` (si shumica e operacioneve matematikore) funksionon vetëm me numra, ajo konverton një string bosh `""` në `0`.
+3. Shtimi me stringu i shton stringut numrin `5`.
+4. Zbritja gjithmonë shndërrohet në numra, kështu që e bën `" -9 "` një numër `-9` (duke shpërfillur hapësirat rreth tij).
+5. 'null' bëhet '0' pas konvertimit numerik.
+6. `undefined` behet `NaN` pas konvertimit numerik.
+7. Karakteret e hapësirës, shkurtohen nga fillimi dhe mbarimi i vargut kur një varg konvertohet në një numër. Këtu i gjithë vargu përbëhet nga karaktere me hapsire, të tilla si `\t`, `\n` dhe një hapësirë "e rregullt" midis tyre. Pra, në mënyrë të ngjashme me një varg bosh, ai bëhet `0`.

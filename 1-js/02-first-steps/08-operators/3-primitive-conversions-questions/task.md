@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# Type conversions
+# Lloji i konvertimeve
 
-What are results of these expressions?
+Cilat janë rezultatet e këtyre shprehjeve?
 
 ```js no-beautify
 "" + 1 + 0
@@ -24,4 +24,4 @@ undefined + 1
 " \t \n" - 2
 ```
 
-Think well, write down and then compare with the answer.
+Mendo mirë, shkruaj dhe më pas krahaso me përgjigjen.

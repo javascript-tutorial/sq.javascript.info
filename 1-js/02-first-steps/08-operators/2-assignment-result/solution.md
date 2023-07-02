@@ -1,5 +1,5 @@
-The answer is:
+Përgjigja është:
 
-- `a = 4` (multiplied by 2)
-- `x = 5` (calculated as 1 + 4)
+- `a = 4` (shumëzuar me 2)
+- `x = 5` (llogaritet si 1 + 4)
 

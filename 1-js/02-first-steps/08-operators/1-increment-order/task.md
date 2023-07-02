@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# The postfix and prefix forms
+# Format e postfiksit dhe prefiksit
 
-What are the final values of all variables `a`, `b`, `c` and `d` after the code below?
+Cilat janë vlerat përfundimtare të të gjitha variablave `a`, `b`, `c` dhe `d` pas kodit më poshtë?
 
 ```js
 let a = 1, b = 1;

@@ -2,9 +2,9 @@ importance: 3
 
 ---
 
-# Assignment result
+# Rezultati i detyrës
 
-What are the values of `a` and `x` after the code below?
+Cilat janë vlerat e `a` dhe `x` pas kodit më poshtë?
 
 ```js
 let a = 2;
