@@ -1,166 +1,138 @@
-# Nullish coalescing operator '??'
+# Operatori i bashkërenditjes së zero-vlerave (null/undefined) '??'
 
 [recent browser="new"]
 
-Here, in this article, we'll say that an expression is "defined" when it's neither `null` nor `undefined`.
+Këtu, në këtë artikull, do të themi se një shprehje është "e përcaktuar" kur ajo nuk është as `null` as `undefined`.
 
-The nullish coalescing operator is written as two question marks `??`.
+Operatori i bashkërenditjes së zero-vlerave shkruhet si dy pikëpyetje `??`.
 
-The result of `a ?? b` is:
-- if `a` is defined, then `a`,
-- if `a` isn't defined, then `b`.
+Rezultati i `a ?? b` është:
+- nëse `a` është i përcaktuar, atëherë `a`,
+- nëse `a` nuk është i përcaktuar, atëherë `b`.
 
+Me fjalë të tjera, `??` kthen argumentin e parë nëse ai nuk është `null/undefined`. Përndryshe, kthen të dytin.
 
-In other words, `??` returns the first argument if it's not `null/undefined`. Otherwise, the second one.
+Operatori i bashkërenditjes së zero-vlerave nuk është diçka krejtësisht e re. Është thjeshtë një sintaksë e bukur për të marrë vlerën e parë "të përcaktuar" nga dy vlerat.
 
-The nullish coalescing operator isn't anything completely new. It's just a nice syntax to get the first "defined" value of the two.
-
-We can rewrite `result = a ?? b` using the operators that we already know, like this:
+Ne mund ta rishkruajmë `result = a ?? b` duke përdorur operatorët që tashmë i dimë, si më poshtë:
 
 ```js
 result = (a !== null && a !== undefined) ? a : b;
 ```
 
-The common use case for `??` is to provide a default value for a potentially undefined variable.
+Rasti i përdorimit më i zakonshëm për `??` është të ofrojë një vlerë të parazgjedhur për një variabël që mund të jetë e papërcaktuar.
 
-For example, here we show `Anonymous` if `user` isn't defined:
+Për shembull, këtu ne shfaqim `Anonymous` nëse `user` nuk është i përcaktuar:
 
-```js run
+```js
 let user;
 
 alert(user ?? "Anonymous"); // Anonymous
 ```
 
-Of course, if `user` had any value except `null/undefined`, then we would see it instead:
+Sigurisht, nëse `user` do të kishte ndonjë vlerë përveç `null/undefined`, atëherë do ta shihnim atë në vend:
 
-```js run
+```js
 let user = "John";
 
 alert(user ?? "Anonymous"); // John
 ```
 
-We can also use a sequence of `??` to select the first value from a list that isn't `null/undefined`.
+Ne gjithashtu mund të përdorim një varg të `??` për të zgjedhur vlerën e parë nga një listë që nuk është `null/undefined`.
 
-Let's say we have a user's data in variables `firstName`, `lastName` or `nickName`. All of them may be undefined, if the user decided not to enter a value.
+Le të themi se kemi të dhënat e një përdoruesi në variablat `firstName`, `lastName` ose `nickName`. Të gjitha ato mund të jenë të papërcaktuara, nëse përdoruesi vendosi të mos shkruajë një vlerë.
 
-We'd like to display the user name using one of these variables, or show "Anonymous" if all of them are undefined.
+Dëshirojmë të shfaqim emrin e përdoruesit duke përdorur një nga këto variabla, ose të shfaqim "Anonymous" nëse të gjitha ato janë të papërcaktuara.
 
-Let's use the `??` operator for that:
+Le të përdorim operatorin `??` për këtë:
 
-```js run
+```js
 let firstName = null;
 let lastName = null;
 let nickName = "Supercoder";
 
-// shows the first defined value:
+// tregon vlerën e parë të përcaktuar:
 *!*
 alert(firstName ?? lastName ?? nickName ?? "Anonymous"); // Supercoder
 */!*
 ```
 
-## Comparison with ||
+## Krahasimi me ||
 
-The OR `||` operator can be used in the same way as `??`, as it was described in the [previous chapter](info:logical-operators#or-finds-the-first-truthy-value).
+Operatori OR `||` mund të përdoret në të njëjtën mënyrë si `??`, siç është përshkruar në [kapitullin e mëparshëm](info:logical-operators#or-finds-the-first-truthy-value).
 
-For example, in the code above we could replace `??` with `||` and still get the same result:
+Për shembull, në kodin e mësipërm mund të zëvendësojmë `??` me `||` dhe ende të marrim të njëjtin rezultat:
 
-```js run
+```js
 let firstName = null;
 let lastName = null;
 let nickName = "Supercoder";
 
-// shows the first truthy value:
+// tregon vlerën e parë të vërtetë:
 *!*
 alert(firstName || lastName || nickName || "Anonymous"); // Supercoder
 */!*
 ```
 
-The OR `||` operator exists since the beginning of JavaScript, so developers were using it for such purposes for a long time.
+Operatori OR `||` ekziston tashmë në JavaScript për shumë vite. Para se `??` të shtohej në specifikimin e gjuhës, `||` ishte një mënyrë për të arritur të njëjtën gjë.
 
-On the other hand, the nullish coalescing operator `??` was added to JavaScript only recently, and the reason for that was that people weren't quite happy with `||`.
+Por ka një rëndësi të madhe.
 
-The important difference between them is that:
-- `||` returns the first *truthy* value.
-- `??` returns the first *defined* value.
+Operatori OR `||` kthen vlerën e parë të vërtetë, ndërsa `??` kthen vlerën e parë të përcaktuar.
 
-In other words, `||` doesn't distinguish between `false`, `0`, an empty string `""` and `null/undefined`. They are all the same -- falsy values. If any of these is the first argument of `||`, then we'll get the second argument as the result.
+Kjo do të thotë se kur përdorim `||`, vlerat false si `0`, `''`, `NaN` do të injorohen.
 
-In practice though, we may want to use default value only when the variable is `null/undefined`. That is, when the value is really unknown/not set.
+Për shembull:
 
-For example, consider this:
-
-```js run
+```js
 let height = 0;
 
 alert(height || 100); // 100
 alert(height ?? 100); // 0
 ```
 
-- The `height || 100` checks `height` for being a falsy value, and it really is.
-    - so the result is the second argument, `100`.
-- The `height ?? 100` checks `height` for being `null/undefined`, and it's not,
-    - so the result is `height` "as is", that is `0`.
+Në këtë kod, `height || 100` kthen `100` sepse `height` është `0` (i cili është një vlerë false). Në anën tjetër, `height ?? 100` kthen `height` që është `0`, siç duhet të ishte.
 
-If the zero height is a valid value, that shouldn't be replaced with the default, then `??` does just the right thing.
+## Prioriteti i `??`
 
-## Precedence
+Prioriteti i operatorit `??` është mjaft i ulët: `5` në [tabelën e MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table). Pra, `??` vlerësohet para `=` dhe `?`, por pas shumicës së operacioneve të tjera, si `+`, `*`.
 
-The precedence of the `??` operator is rather low: `5` in the [MDN table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table). So `??` is evaluated before `=` and `?`, but after most other operations, such as `+`, `*`.
+Pra, nëse dëshirojmë të zgjedhim një vlerë me `??` në një shprehje me operatorë të tjerë, konsideroni shtimin e kllapave:
 
-So if we'd like to choose a value with `??` in an expression with other operators, consider adding parentheses:
 
-```js run
-let height = null;
-let width = null;
-
-// important: use parentheses
-let area = (height ?? 100) * (width ?? 50);
-
-alert(area); // 5000
-```
-
-Otherwise, if we omit parentheses, then as `*` has the higher precedence than `??`, it would execute first, leading to incorrect results.
+Për shembull, në kodin më poshtë `alert` nuk do të ekzekutohet:
 
 ```js
-// without parentheses
-let area = height ?? 100 * width ?? 50;
+let x = 1;
+let y = 2;
 
-// ...works the same as this (probably not what we want):
-let area = height ?? (100 * width) ?? 50;
-```
-
-### Using ?? with && or ||
-
-Due to safety reasons, JavaScript forbids using `??` together with `&&` and `||` operators, unless the precedence is explicitly specified with parentheses.
-
-The code below triggers a syntax error:
-
-```js run
-let x = 1 && 2 ?? 3; // Syntax error
-```
-
-The limitation is surely debatable, but it was added to the language specification with the purpose to avoid programming mistakes, when people start to switch to `??` from `||`.
-
-Use explicit parentheses to work around it:
-
-```js run
 *!*
-let x = (1 && 2) ?? 3; // Works
+// Gabim
+if (x > y ?? x > 1 || y > 1) {
+  alert('Nuk do të shfaqet');
+}
 */!*
-
-alert(x); // 2
 ```
 
-## Summary
+JavaScript e interpreton kodin `x > y ?? x > 1 || y > 1` si `x > (y ?? x) > 1 || y > 1`, kjo do të thotë se rezultati i `y ?? x` do të krahasohet me `1`. Por në fakt, duam të kontrollojmë rezultatin e `x > y` dhe `x > 1` ose `y > 1`.
 
-- The nullish coalescing operator `??` provides a short way to choose the first "defined" value from a list.
+Pra, duhet të përdorim kllapa:
 
-    It's used to assign default values to variables:
+```js
+let x = 1;
+let y = 2;
 
-    ```js
-    // set height=100, if height is null or undefined
-    height = height ?? 100;
-    ```
+if ((x > y) ?? (x > 1) || (y > 1)) {
+  alert('Nuk do të shfaqet');
+}
+```
 
-- The operator `??` has a very low precedence, only a bit higher than `?` and `=`, so consider adding parentheses when using it in an expression.
-- It's forbidden to use it with `||` or `&&` without explicit parentheses.
+Tani funksionon siç duhet.
+
+## Përfundim
+
+Operatori i bashkërenditjes së zero-vlerave `??` është një mënyrë e sigurt për të zgjedhur vlerën e parë "të përcaktuar" nga lista.
+
+Ajo është një zëvendësim i mirë për `||` në rastet kur duam të mbështesim vlerat false `0`, `''`, `NaN`.
+
+Sigurohuni që të mos përdorni `??` me `||` ose `&&` pa shtuar kllapa, sepse për shkak të prioritetit të ulët të operatorit `??`, mund të mos merrni rezultatin e pritur.
