@@ -12,8 +12,13 @@ Një IDE ngarkon projektin (që mund të përmbaj shume dosje), lejon navigimin 
 
 Nëse ende nuk keni zgjedhur një IDE, konsideroni këto opsione:
 
+<<<<<<< HEAD
 - [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, falas).
 - [WebStorm](http://www.jetbrains.com/webstorm/) (cross-platform, me pagese).
+=======
+- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
+- [WebStorm](https://www.jetbrains.com/webstorm/) (cross-platform, paid).
+>>>>>>> 035c5267ba80fa7b55878f7213cbde449b4092d9
 
 Për Windows, gjithashtu ekziston "Visual Studio", pa u ngatërruar me "Visual Studio Code". "Visual Studio" është një editor me pagesë dhe shumë i fuqishëm, i përshtatshëm për platformën .NET. Është gjithashtu i mirë për JavaScript. Ekziston gjithashtu një version falas [Visual Studio Community](https://www.visualstudio.com/vs/community/).
 
@@ -29,6 +34,7 @@ Diferenca kryesore mes një "editori të lehtë" dhe një "IDE" është se një 
 
 Në praktikë, editorët e lehtë mund të kenë shumë plugin duke përfshirë analizues sintakse në nivelin e direktorisë dhe plotësues automatikë, kështu që nuk ka kufi të prerë mes një editori të lehtë dhe një IDE.
 
+<<<<<<< HEAD
 Opsionet në vijim meritojnë vëmendjen tuaj:
 
 - [Atom](https://atom.io/) (cross-platform, falas).
@@ -36,6 +42,13 @@ Opsionet në vijim meritojnë vëmendjen tuaj:
 - [Sublime Text](http://www.sublimetext.com) (cross-platform, me pagese).
 - [Notepad++](https://notepad-plus-plus.org/) (Windows, falas).
 - [Vim](http://www.vim.org/) dhe [Emacs](https://www.gnu.org/software/emacs/) janë gjithashtu të shkëlqyeshëm nëse dini si t'i përdorni.
+=======
+There are many options, for instance:
+
+- [Sublime Text](https://www.sublimetext.com/) (cross-platform, shareware).
+- [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
+- [Vim](https://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
+>>>>>>> 035c5267ba80fa7b55878f7213cbde449b4092d9
 
 ## Le të mos diskutojmë.
 
@@ -43,4 +56,13 @@ Në listat e mësipërme janë të përfshirë editorët që unë ose miqtë e m
 
 Ka edhe editorë të tjerë të shkëlqyeshëm në botën tonë të madhe. Ju lutem zgjidhni atë që ju pëlqen më shumë.
 
+<<<<<<< HEAD
 Zgjedhja e një editori, si çdo mjet tjetër, është individuale dhe varet nga projektet tuaja, zakonet dhe preferencat personale.
+=======
+The choice of an editor, like any other tool, is individual and depends on your projects, habits, and personal preferences.
+
+The author's personal opinion:
+
+- I'd use [Visual Studio Code](https://code.visualstudio.com/) if I develop mostly frontend.
+- Otherwise, if it's mostly another language/platform and partially frontend, then consider other editors, such as XCode (Mac), Visual Studio (Windows) or Jetbrains family (Webstorm, PHPStorm, RubyMine etc, depending on the language).
+>>>>>>> 035c5267ba80fa7b55878f7213cbde449b4092d9
