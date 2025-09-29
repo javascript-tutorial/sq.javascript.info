@@ -22,7 +22,7 @@ Mjetet e zhvilluesit do të hapen në skedën "Console" si parazgjedhje.
 
 Do te duket dicka e tillë:
 
-![chrome](chrome.png)
+![chrome](chrome.webp)
 
 Pamja e saktë e mjetit te zhvilluesit varet nga versioni juaj i Chrome. Ajo ndryshon nga koha në kohë, por duhet të jetë e ngjashme.
 
@@ -49,7 +49,11 @@ Pamjet e tyre janë shumë të ngjashme. Nëse dini si të përdorni njërin nga
 
 Safari (shfletuesi i Mac, i cili nuk mbështetet në Windows/Linux) është paksa i veçantë këtu. Ne duhet të aktivizojmë "Menunë e Zhvilluesit" së pari.
 
+<<<<<<< HEAD
 Hapni Preferencat dhe shkoni te paneli "Advanced". Në fund të tij ka një kutizë zgjedhjeje:
+=======
+Open Settings and go to the "Advanced" pane. There's a checkbox at the bottom:
+>>>>>>> 51bc6d3cdc16b6eb79cb88820a58c4f037f3bf19
 
 ![safari](safari.png)
 
