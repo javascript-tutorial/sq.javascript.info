@@ -1,7 +1,11 @@
 
 # Manuali dhe specifikat
 
+<<<<<<< HEAD
 Ky libër eshte nje *udhëzues*. Ai synon t'ju ndihmojë të mësoni gradualisht gjuhën. Por sapo të njiheni me gjerat bazike, do t'ju nevojiten burime të tjera.
+=======
+This book is a *tutorial*. It aims to help you gradually learn the language. But once you're familiar with the basics, you'll need other resources.
+>>>>>>> d78b01e9833009fab534462e05c03cffc51bf0e3
 
 ## Specification
 
@@ -9,14 +13,23 @@ Ky libër eshte nje *udhëzues*. Ai synon t'ju ndihmojë të mësoni gradualisht
 
 Por duke qenë se është formalizuar, është e vështirë për tu kuptuar në fillim. Prandaj, nëse ju nevojitet burimi më i besueshëm i informacionit për detajet e gjuhës, specifikacioni është vendi i duhur. Por nuk është për përdorim të përditshëm.
 
+<<<<<<< HEAD
 Çdo vit lëshohet një version i ri i specifikacionit. Mes këtyre versioneve, drafti i fundit i specifikacionit gjendet në adresën <https://tc39.es/ecma262/>.
+=======
+A new specification version is released every year. Between these releases, the latest specification draft is at <https://tc39.es/ecma262/>.
+>>>>>>> d78b01e9833009fab534462e05c03cffc51bf0e3
 
 Për të lexuar rreth veçorive të reja të fundit, duke përfshirë ato që janë "gati standarte" (të ashtuquajtura "stage 3"), shikoni propozimet tek <https://github.com/tc39/proposals>.
 
+<<<<<<< HEAD
 Gjithashtu, nëse po zhvilloni për shfletuesin, atëherë ka specifikime të tjera që trajtohen në [pjesen e dyte](info:browser-environment) të udhëzuesit.
+=======
+Also, if you're developing for the browser, then there are other specifications covered in the [second part](info:browser-environment) of the tutorial.
+>>>>>>> d78b01e9833009fab534462e05c03cffc51bf0e3
 
 ## Manuali
 
+<<<<<<< HEAD
 - **MDN (Mozilla) JavaScript Reference** është një manual me shembuj dhe informacione të tjera. Është shumë e mirë për të marrë informacion të hollësishëm për funksionet, metodat etj.
 
     Mund ta gjeni në adresën <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>.
@@ -27,6 +40,13 @@ Gjithashtu, nëse po zhvilloni për shfletuesin, atëherë ka specifikime të tj
 - **MSDN** – Manuali i Microsoft më shumë informacion, përfshirë JavaScript (shpesh e quajtur JScript). Nëse dikush ka nevojë për diçka specifike për Internet Explorer, është më mirë të shkojë aty: <http://msdn.microsoft.com/>.
 
     Gjithashtu, mund të përdorim një kërkim në internet me fraza të tilla si "RegExp MSDN" ose "RegExp MSDN jscript".
+=======
+- **MDN (Mozilla) JavaScript Reference** is the main manual with examples and other information. It's great to get in-depth information about individual language functions, methods etc.
+
+    You can find it at <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>.
+
+Although, it's often best to use an internet search instead. Just use "MDN [term]" in the query, e.g. <https://google.com/search?q=MDN+parseInt> to search for the `parseInt` function.
+>>>>>>> d78b01e9833009fab534462e05c03cffc51bf0e3
 
 ## Tabelat e përputhshmërisë
 
@@ -34,9 +54,16 @@ Javascript është një gjuhë zhvilluese, veçoritë e reja shtohen rregullisht
 
 Për të parë mbështetjen e tyre në shfletuesit dhe motorët e tjerë, shihni:
 
+<<<<<<< HEAD
 - <http://caniuse.com> - tabela e suportit sipas veçorive p.sh. për të parë cilët motorë mbështesin funksionet moderne të kriptografisë:  <http://caniuse.com/#feat=cryptography>.
 - <https://kangax.github.io/compat-table> - Një tabelë me veçoritë e gjuhës dhe motorët që i suportojnë ose nuk i suportojnë.
 
 Të gjithë këto burime janë të dobishme në zhvillimin e vërtetë, pasi përmbajnë informacion të vlefshëm rreth detajeve të gjuhës, mbështetjes së tyre, dhe aspekteve të tjera relevante.
+=======
+- <https://caniuse.com> - per-feature tables of support, e.g. to see which engines support modern cryptography functions: <https://caniuse.com/#feat=cryptography>.
+- <https://kangax.github.io/compat-table> - a table with language features and engines that support those or don't support.
+
+All these resources are useful in real-life development, as they contain valuable information about language details, their support, etc.
+>>>>>>> d78b01e9833009fab534462e05c03cffc51bf0e3
 
 Ju lutem mbani mend këto burime (ose këtë faqe) për rastet kur ju nevojitet informacion i hollësishëm rreth një veçorie të veçantë.
